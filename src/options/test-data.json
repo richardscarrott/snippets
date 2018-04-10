@@ -1,0 +1,98 @@
+[
+  {
+    "name": "checkout-autofill.ts",
+    "path": "snippets/checkout-autofill.ts",
+    "sha": "200eb64e372e147793982c0b141cc84c62d99819",
+    "size": 42,
+    "content": "Y29uc29sZS5sb2coJ1J1bm5pbmcgY2hlY2tvdXQgYXV0b2ZpbGwnKTsK",
+    "url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/checkout-autofill.ts?ref=master",
+    "html_url":
+      "https://github.com/richardscarrott/test-snippets/blob/master/snippets/checkout-autofill.ts",
+    "git_url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/200eb64e372e147793982c0b141cc84c62d99819",
+    "download_url":
+      "https://raw.githubusercontent.com/richardscarrott/test-snippets/master/snippets/checkout-autofill.ts",
+    "type": "file",
+    "_links": {
+      "self":
+        "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/checkout-autofill.ts?ref=master",
+      "git":
+        "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/200eb64e372e147793982c0b141cc84c62d99819",
+      "html":
+        "https://github.com/richardscarrott/test-snippets/blob/master/snippets/checkout-autofill.ts"
+    }
+  },
+  {
+    "name": "log-query.js",
+    "path": "snippets/log-query.js",
+    "sha": "ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d",
+    "size": 30,
+    "content": "Y29uc29sZS5sb2coJ0xvZ2dpbmcgcXVlcnknKTsK",
+    "url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/log-query.js?ref=master",
+    "html_url":
+      "https://github.com/richardscarrott/test-snippets/blob/master/snippets/log-query.js",
+    "git_url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d",
+    "download_url":
+      "https://raw.githubusercontent.com/richardscarrott/test-snippets/master/snippets/log-query.js",
+    "type": "file",
+    "_links": {
+      "self":
+        "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/log-query.js?ref=master",
+      "git":
+        "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d",
+      "html":
+        "https://github.com/richardscarrott/test-snippets/blob/master/snippets/log-query.js"
+    }
+  },
+  {
+    "name": "log-store.js",
+    "path": "snippets/log-store.js",
+    "sha": "c9dfcbcc69e5384ba05dad46acbfba35865e453c",
+    "size": 30,
+    "content": "Y29uc29sZS5sb2coJ0xvZ2dpbmcgc3RvcmUnKTsK\n",
+    "url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/log-store.js?ref=master",
+    "html_url":
+      "https://github.com/richardscarrott/test-snippets/blob/master/snippets/log-store.js",
+    "git_url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/c9dfcbcc69e5384ba05dad46acbfba35865e453c",
+    "download_url":
+      "https://raw.githubusercontent.com/richardscarrott/test-snippets/master/snippets/log-store.js",
+    "type": "file",
+    "_links": {
+      "self":
+        "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/log-store.js?ref=master",
+      "git":
+        "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/c9dfcbcc69e5384ba05dad46acbfba35865e453c",
+      "html":
+        "https://github.com/richardscarrott/test-snippets/blob/master/snippets/log-store.js"
+    }
+  },
+  {
+    "name": "search-autofill.js",
+    "path": "snippets/search-autofill.js",
+    "sha": "add03be3983eba9555d96ac5adb2ccefb491dd03",
+    "size": 40,
+    "content": "Y29uc29sZS5sb2coJ1J1bm5pbmcgc2VhcmNoIGF1dG9maWxsJyk7Cg==\n",
+    "url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/search-autofill.js?ref=master",
+    "html_url":
+      "https://github.com/richardscarrott/test-snippets/blob/master/snippets/search-autofill.js",
+    "git_url":
+      "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/add03be3983eba9555d96ac5adb2ccefb491dd03",
+    "download_url":
+      "https://raw.githubusercontent.com/richardscarrott/test-snippets/master/snippets/search-autofill.js",
+    "type": "file",
+    "_links": {
+      "self":
+        "https://api.github.com/repos/richardscarrott/test-snippets/contents/snippets/search-autofill.js?ref=master",
+      "git":
+        "https://api.github.com/repos/richardscarrott/test-snippets/git/blobs/add03be3983eba9555d96ac5adb2ccefb491dd03",
+      "html":
+        "https://github.com/richardscarrott/test-snippets/blob/master/snippets/search-autofill.js"
+    }
+  }
+]

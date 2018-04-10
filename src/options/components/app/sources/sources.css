@@ -1,0 +1,14 @@
+.noResults {
+  padding-top: 24px;
+}
+
+.sourceList {
+  margin-bottom: 95px;
+}
+
+.addButton {
+  position: fixed;
+  /* TODO: Work out how to read MUI theme values in css (could prob define them as CSS variables) */
+  right: 24px;
+  bottom: 24px;
+}

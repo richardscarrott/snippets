@@ -1,0 +1,29 @@
+{
+  "name": "Snippets",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Add JavaScript snippets to your context menu",
+  "homepage_url": "http://github.com/richardscarrott/snippets",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": ["dist/background.js"]
+  },
+  "options_page": "dist/options.html",
+  "options_ui": {
+    "page": "dist/options.html",
+    "chrome_style": false,
+    "open_in_tab": true // Dialog has weird sizing issues
+  },
+  "permissions": ["contextMenus", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"]
+    }
+  ]
+}
