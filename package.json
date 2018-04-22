@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config ./build/webpack-config.js --env development --watch",
-    "build": "webpack --config ./build/webpack-config.js --env production"
+    "start":
+      "npm run clean && webpack --config ./build/webpack-config.js --env development --watch",
+    "build":
+      "npm run clean && webpack --config ./build/webpack-config.js --env production",
+    "clean": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",
