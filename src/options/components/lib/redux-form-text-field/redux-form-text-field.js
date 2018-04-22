@@ -7,7 +7,15 @@ const ReduxFormTextField = ({ meta, ...rest }) => {
     <TextField
       {...rest}
       error={hasError}
-      helperText={hasError ? meta.error : rest.helperText}
+      helperText={
+        hasError ? rest.helperText ? (
+          rest.helperText
+        ) : (
+          meta.error
+        ) : (
+          rest.helperText
+        )
+      }
     />
   );
 };

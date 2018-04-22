@@ -51,7 +51,19 @@ class SourceForm extends Component {
                 component="span"
                 variant="subheading"
               >
-                Something went wrong, please try again.
+                Sorry something went wrong.<br />
+              </Typography>
+              <Typography
+                gutterBottom
+                color="error"
+                component="span"
+                variant="subheading"
+              >
+                {/* TODO: Pass the error response with the link */}
+                Having trouble adding a source? Feel free to raise an issue{' '}
+                <a href="https://github.com/richardscarrott/snippets/issues">
+                  here
+                </a>
               </Typography>
             </DialogContentText>
           ) : null}
@@ -116,7 +128,7 @@ class SourceForm extends Component {
             id="path"
             label="Path"
             type="text"
-            placeholder="e.g. snippets"
+            placeholder="e.g. src/snippets"
             helperText="Relative to the root of the repo"
             fullWidth
           />
