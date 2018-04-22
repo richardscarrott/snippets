@@ -1,13 +1,19 @@
 import 'babel-polyfill';
 import './options.html';
 import React from 'react';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/app/app';
 import { Router } from 'react-router-dom';
 import createHistory from 'history/createMemoryHistory';
 import { PersistGate } from 'redux-persist/integration/react';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('Expected #root element in initial html.');
+}
 
 const [store, persistor] = chrome.extension.getBackgroundPage().getStore();
 
@@ -45,5 +51,15 @@ render(
       </MuiThemeProvider>
     </PersistGate>
   </Provider>,
-  document.getElementById('root')
+  rootElement
+);
+
+window.addEventListener(
+  'unload',
+  () => {
+    // NOTE: It's v. important to unmount the react component tree to ensure any subscriptions
+    // held by the store in the background page are removed (otherwise hell will open up).
+    unmountComponentAtNode(rootElement);
+  },
+  false
 );

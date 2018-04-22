@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":
-      "webpack --config ./build/webpack-config.js --env development --watch",
+    "start": "webpack --config ./build/webpack-config.js --env development --watch",
     "build": "webpack --config ./build/webpack-config.js --env production"
   },
   "author": "",
@@ -34,7 +33,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "history": "^4.7.2",
-    "material-ui": "^1.0.0-beta.37",
+    "material-ui": "^1.0.0-beta.42",
     "material-ui-icons": "^1.0.0-beta.36",
     "murmurhash-js": "^1.0.0",
     "normalizr": "^3.2.4",
