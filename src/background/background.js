@@ -45,22 +45,31 @@ const renderContentContextMenu = (content, parentId) => {
   });
 };
 
+const OPTIONS_CONTEXT_MENU_ID = uuid();
+const TOP_LEVEL_CONTEXT_MENU_ID = uuid();
+
 const render = state => {
   return removeAllContextMenus()
     .then(() => {
-      const topLevelContextMenuId = uuid();
       return createContextMenu({
-        id: topLevelContextMenuId,
+        id: TOP_LEVEL_CONTEXT_MENU_ID,
         title: 'Snippets'
-      }).then(() => topLevelContextMenuId);
+      });
     })
-    .then(topLevelContextMenuId => {
+    .then(() => {
       const sources = sourcesSelector(state);
       return Promise.all(
         sources.map(source =>
-          renderContentContextMenu(source.content, topLevelContextMenuId)
+          renderContentContextMenu(source.content, TOP_LEVEL_CONTEXT_MENU_ID)
         )
       );
+    })
+    .then(() => {
+      return createContextMenu({
+        id: OPTIONS_CONTEXT_MENU_ID,
+        title: 'Add new snippets',
+        parentId: TOP_LEVEL_CONTEXT_MENU_ID
+      });
     });
 };
 
@@ -73,6 +82,12 @@ const start = store => {
     });
   });
   chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === OPTIONS_CONTEXT_MENU_ID) {
+      chrome.tabs.create({
+        url: 'dist/options.html'
+      });
+      return;
+    }
     const menuItemIdParts = info.menuItemId.split(ID_DELIMITER);
     const fileId = menuItemIdParts[menuItemIdParts.length - 1];
     const file = store.getState().entities.files[fileId]; // TODO: Use selector.

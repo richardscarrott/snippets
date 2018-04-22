@@ -11,7 +11,8 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": ["dist/background.js"]
+    "scripts": ["dist/background.js"],
+    "persistent": false
   },
   "options_page": "dist/options.html",
   "options_ui": {
