@@ -9,7 +9,8 @@
       "npm run clean && webpack --config ./build/webpack-config.js --env development --watch",
     "build":
       "npm run clean && webpack --config ./build/webpack-config.js --env production",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "zip": "zip -r app.zip manifest.json icons dist"
   },
   "author": "",
   "license": "ISC",
