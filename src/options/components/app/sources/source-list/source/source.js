@@ -50,17 +50,23 @@ class Source extends Component {
   }
 
   render() {
-    const { id, name, api, owner, repo, path, meta: { status } } = this.props;
+    const {
+      id,
+      name,
+      api,
+      owner,
+      repo,
+      path,
+      meta: { status },
+      description
+    } = this.props;
     const { anchorEl } = this.state;
     return (
       <ListItem>
         <ListItemIcon>
           {status === 'READING' ? <CircularProgress size={24} /> : <CodeIcon />}
         </ListItemIcon>
-        <ListItemText
-          primary={name}
-          secondary={`${api}/${owner}/${repo}/${path}`}
-        />
+        <ListItemText primary={name} secondary={description} />
         <ListItemSecondaryAction onClick={this.handleMenuOpen}>
           <IconButton>
             <MoreVertIcon />

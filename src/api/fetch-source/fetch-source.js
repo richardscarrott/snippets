@@ -3,7 +3,7 @@ import { murmur2 } from 'murmurhash-js';
 import uuid from 'uuid/v1';
 
 const endpoint = (api, owner, repo, path) =>
-  `${api}/repos/${owner}/${repo}/contents/${path}`;
+  new URL(`repos/${owner}/${repo}/contents/${path}`, api);
 
 const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
   const response = await window.fetch(endpoint(api, owner, repo, path), {
@@ -12,7 +12,10 @@ const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
       Authorization: `token ${accessToken}`
     }
   });
-  // TODO: Better error handling.
+  // TODO: Better error handling / messaging
+  if (response.status !== 200) {
+    throw new Error(`Expected 200, received ${response.status}`);
+  }
   const contents = await response.json();
   if (Array.isArray(contents)) {
     return {
