@@ -101,6 +101,9 @@ const [store, persistor] = configureStore();
 window.getStore = () => [store, persistor];
 
 // HACK: Don't render until store has persisted. (TODO: copy PersistGate implementation.)
-setTimeout(() => {
-  start(store);
-}, 2000);
+persistor.subscribe(() => {
+  const { bootstrapped } = persistor.getState();
+  if (bootstrapped) {
+    start(store);
+  }
+});
