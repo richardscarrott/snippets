@@ -11,7 +11,7 @@
   },
   "background": {
     "scripts": ["dist/background.js"],
-    "persistent": false
+    "persistent": true
   },
   "options_page": "dist/options.html",
   "options_ui": {
