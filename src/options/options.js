@@ -15,14 +15,6 @@ if (!rootElement) {
   throw new Error('Expected #root element in initial html.');
 }
 
-const [store, persistor] = chrome.extension.getBackgroundPage().getStore();
-
-if (!store) {
-  throw new Error('Expected global `store` defined by background page.');
-}
-
-const history = createHistory();
-
 // TODO: Make these available in CSS modules.
 const theme = createMuiTheme({
   palette: {
@@ -41,25 +33,34 @@ const theme = createMuiTheme({
   }
 });
 
-render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <MuiThemeProvider theme={theme}>
-        <Router history={history}>
-          <App />
-        </Router>
-      </MuiThemeProvider>
-    </PersistGate>
-  </Provider>,
-  rootElement
-);
+const history = createHistory();
 
-window.addEventListener(
-  'unload',
-  () => {
-    // NOTE: It's v. important to unmount the react component tree to ensure any subscriptions
-    // held by the store in the background page are removed (otherwise hell will open up).
-    unmountComponentAtNode(rootElement);
-  },
-  false
-);
+chrome.runtime.getBackgroundPage(({ getStore }) => {
+  if (!getStore) {
+    throw new Error('Expected global `getStore` defined by background page.');
+  }
+  const [store, persistor] = getStore();
+
+  render(
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <MuiThemeProvider theme={theme}>
+          <Router history={history}>
+            <App />
+          </Router>
+        </MuiThemeProvider>
+      </PersistGate>
+    </Provider>,
+    rootElement
+  );
+
+  window.addEventListener(
+    'unload',
+    () => {
+      // NOTE: It's v. important to unmount the react component tree to ensure any subscriptions
+      // held by the store in the background page are removed (otherwise hell will open up).
+      unmountComponentAtNode(rootElement);
+    },
+    false
+  );
+});

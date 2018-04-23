@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run clean",
     "start":
-      "npm run clean && webpack --config ./build/webpack-config.js --env development --watch",
-    "build":
-      "npm run clean && webpack --config ./build/webpack-config.js --env production",
+      "webpack --config ./build/webpack-config.js --env development --watch",
+    "prebuild": "npm run clean",
+    "build": "webpack --config ./build/webpack-config.js --env production",
     "clean": "rm -rf dist",
-    "zip": "zip -r app.zip manifest.json icons dist"
+    "prepackage": "npm run build",
+    "package": "zip -r app.zip manifest.json icons dist"
   },
   "author": "",
   "license": "ISC",
