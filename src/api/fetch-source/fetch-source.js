@@ -2,8 +2,12 @@ import { normalize, schema } from 'normalizr';
 import { murmur2 } from 'murmurhash-js';
 import uuid from 'uuid/v1';
 
-const endpoint = (api, owner, repo, path) =>
-  new URL(`repos/${owner}/${repo}/contents/${path}`, api);
+const endpoint = (api, owner, repo, path) => {
+  const fullPath = path
+    ? `repos/${owner}/${repo}/contents/${path}`
+    : `repos/${owner}/${repo}/contents`;
+  return new URL(fullPath, api);
+};
 
 const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
   const response = await window.fetch(endpoint(api, owner, repo, path), {
@@ -20,7 +24,7 @@ const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
   if (Array.isArray(contents)) {
     return {
       id,
-      name: name,
+      name,
       content: await Promise.all(
         contents.map(content =>
           fetchContents(

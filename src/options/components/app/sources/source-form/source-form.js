@@ -76,7 +76,7 @@ class SourceForm extends Component {
             autoFocus
             margin="dense"
             id="name"
-            label="Name"
+            label="Name *"
             placeholder="This will show up in the context menu"
             type="text"
             fullWidth
@@ -86,7 +86,7 @@ class SourceForm extends Component {
             meta={api.meta}
             margin="dense"
             id="api"
-            label="Github API"
+            label="Github API *"
             type="url"
             placeholder="e.g. https://api.github.com"
             fullWidth
@@ -96,7 +96,7 @@ class SourceForm extends Component {
             meta={accessToken.meta}
             margin="dense"
             id="accessToken"
-            label="GitHub Access Token"
+            label="GitHub Access Token *"
             type="text"
             helperText={<GithubAccessTokenHelperText />}
             fullWidth
@@ -106,7 +106,7 @@ class SourceForm extends Component {
             meta={owner.meta}
             margin="dense"
             id="owner"
-            label="Owner"
+            label="Owner *"
             type="text"
             helperText="Given https://github.com/facebook/react, the owner would be 'facebook'"
             fullWidth
@@ -116,7 +116,7 @@ class SourceForm extends Component {
             meta={repo.meta}
             margin="dense"
             id="repo"
-            label="Repo"
+            label="Repo *"
             type="text"
             helperText="Given https://github.com/facebook/react, the repo would be 'react'"
             fullWidth
@@ -129,7 +129,7 @@ class SourceForm extends Component {
             label="Path"
             type="text"
             placeholder="e.g. src/snippets"
-            helperText="Relative to the root of the repo"
+            helperText="Given https://github.com/facebook/react/tree/master/src/snippets, the path would be 'src/snippets', default to root"
             fullWidth
           />
         </DialogContent>
@@ -151,12 +151,14 @@ const validate = combineValidators({
   api: composeValidators(isRequired)('GitHub API'),
   accessToken: composeValidators(isRequired)('GitHub Access Token'), // Could make this optional?
   owner: composeValidators(isRequired)('Owner'),
-  repo: composeValidators(isRequired)('Repo'),
-  path: composeValidators(isRequired)('Path')
+  repo: composeValidators(isRequired)('Repo')
 });
 
 export default reduxForm({
-  validate
+  validate,
+  initialValues: {
+    api: 'https://api.github.com'
+  }
 })(props => {
   return (
     <Fields

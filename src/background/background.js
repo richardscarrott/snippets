@@ -68,12 +68,12 @@ const render = state => {
         sources.map(source =>
           renderContentContextMenu(source.content, TOP_LEVEL_CONTEXT_MENU_ID)
         )
-      );
+      ).then(() => sources.length);
     })
-    .then(() => {
+    .then(sourcesCount => {
       return createContextMenu({
         id: OPTIONS_CONTEXT_MENU_ID,
-        title: 'Add new snippets',
+        title: sourcesCount > 0 ? 'Manage sources' : 'Add source',
         parentId: TOP_LEVEL_CONTEXT_MENU_ID
       });
     });
