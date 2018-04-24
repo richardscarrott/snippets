@@ -5,6 +5,12 @@ import { sourcesSelector } from '../redux/selectors/sources/sources';
 
 const ID_DELIMITER = '/';
 
+const openOptionsPage = () => {
+  chrome.tabs.create({
+    url: 'dist/options.html'
+  });
+};
+
 const runCode = (tab, code) => {
   chrome.tabs.sendMessage(tab.id, {
     action: 'run-snippet',
@@ -83,9 +89,7 @@ const start = store => {
   });
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === OPTIONS_CONTEXT_MENU_ID) {
-      chrome.tabs.create({
-        url: 'dist/options.html'
-      });
+      openOptionsPage();
       return;
     }
     const menuItemIdParts = info.menuItemId.split(ID_DELIMITER);
@@ -107,3 +111,5 @@ persistor.subscribe(() => {
     start(store);
   }
 });
+
+chrome.browserAction.onClicked.addListener(() => openOptionsPage());

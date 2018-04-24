@@ -13,6 +13,7 @@
     "scripts": ["dist/background.js"],
     "persistent": true
   },
+  "browser_action": {},
   "options_page": "dist/options.html",
   "options_ui": {
     "page": "dist/options.html",
