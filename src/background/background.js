@@ -36,14 +36,40 @@ const removeAllContextMenus = () =>
     chrome.contextMenus.removeAll(createCallback(resolve, reject))
   );
 
+const isDir = content => Array.isArray(content.content);
+
+const isFile = content => !isDir(content);
+
+const isFileRenderable = file => file.name.endsWith('.js');
+
+const isDirRenderable = dir => dir.content.some(isContentRenderable);
+
+const isContentRenderable = content => {
+  if (isDir(content)) {
+    return isDirRenderable(content);
+  }
+  return isFileRenderable(content);
+};
+
 const renderContentContextMenu = (content, parentId) => {
-  const id = `${parentId}${ID_DELIMITER}${content.id}`;
+  if (isFile(content) && !isFileRenderable(content)) {
+    return;
+  }
+  const id = `${uuid()}${ID_DELIMITER}${content.id}`;
   return createContextMenu({
     id,
     title: content.name,
     parentId
   }).then(() => {
-    if (Array.isArray(content.content)) {
+    if (isDir(content)) {
+      if (!isDirRenderable(content)) {
+        return createContextMenu({
+          id: uuid(),
+          title: 'Empty',
+          enabled: false,
+          parentId: id
+        });
+      }
       return Promise.all(
         content.content.map(content => renderContentContextMenu(content, id))
       );
@@ -104,7 +130,6 @@ const [store, persistor] = configureStore();
 // Expose store to options page.
 window.getStore = () => [store, persistor];
 
-// HACK: Don't render until store has persisted. (TODO: copy PersistGate implementation.)
 persistor.subscribe(() => {
   const { bootstrapped } = persistor.getState();
   if (bootstrapped) {
