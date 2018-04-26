@@ -1,4 +1,5 @@
 import { fork, take, call, put, race } from 'redux-saga/effects';
+import parseGithubUrl from 'parse-github-url';
 import fetchSource from '../../../api/fetch-source/fetch-source';
 import {
   ADD_SOURCE_REQUESTED,
@@ -29,10 +30,44 @@ function* addSourceWithCancel(source) {
   ]);
 }
 
+const PUBLIC_GITHUB_HOST = 'github.com';
+
+const getApi = (protocol, host) => {
+  return host === PUBLIC_GITHUB_HOST
+    ? `${protocol}//api.${host}`
+    : `${protocol}//${host}/api/v3`;
+};
+
+// TODO: Move to util and unit test
+const getSource = ({ id, name, url, accessToken }) => {
+  const {
+    owner,
+    name: repo,
+    protocol,
+    branch,
+    pathname,
+    host
+  } = parseGithubUrl(url);
+  const path = pathname.split(branch)[1];
+  return {
+    id,
+    name,
+    accessToken,
+    url,
+    path,
+    owner,
+    repo,
+    api: getApi(protocol, host),
+    branch
+  };
+};
+
 function* watchAddSource() {
   while (true) {
     const action = yield take(ADD_SOURCE_REQUESTED);
-    yield fork(addSourceWithCancel, action.payload);
+    // TODO: Try catch this.
+    const source = getSource(action.payload);
+    yield fork(addSourceWithCancel, source);
   }
 }
 

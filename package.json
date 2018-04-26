@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm run clean",
-    "start":
-      "webpack --config ./build/webpack-config.js --env development --watch",
+    "start": "webpack --config ./build/webpack-config.js --env development --watch",
     "prebuild": "npm run clean",
     "build": "webpack --config ./build/webpack-config.js --env production",
     "clean": "rm -rf dist",
@@ -43,6 +42,7 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "murmurhash-js": "^1.0.0",
     "normalizr": "^3.2.4",
+    "parse-github-url": "^1.0.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",

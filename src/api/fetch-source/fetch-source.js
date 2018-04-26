@@ -2,20 +2,32 @@ import { normalize, schema } from 'normalizr';
 import { murmur2 } from 'murmurhash-js';
 import uuid from 'uuid/v1';
 
-const endpoint = (api, owner, repo, path) => {
+const endpoint = (api, owner, repo, path, branch) => {
   const fullPath = path
     ? `repos/${owner}/${repo}/contents/${path}`
     : `repos/${owner}/${repo}/contents`;
-  return new URL(fullPath, api);
+  return new URL(`${fullPath}?ref=${branch}`, api);
 };
 
-const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
-  const response = await window.fetch(endpoint(api, owner, repo, path), {
-    headers: {
-      Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${accessToken}`
+const fetchContents = async (
+  name,
+  id,
+  api,
+  accessToken,
+  owner,
+  repo,
+  path,
+  branch
+) => {
+  const response = await window.fetch(
+    endpoint(api, owner, repo, path, branch),
+    {
+      headers: {
+        Accept: 'application/vnd.github.v3+json',
+        Authorization: `token ${accessToken}`
+      }
     }
-  });
+  );
   // TODO: Better error handling / messaging
   if (response.status !== 200) {
     throw new Error(`Expected 200, received ${response.status}`);
@@ -34,7 +46,8 @@ const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
             accessToken,
             owner,
             repo,
-            content.path
+            content.path,
+            branch
           )
         )
       )
@@ -76,16 +89,11 @@ const fetchSource = async request => {
     request.accessToken,
     request.owner,
     request.repo,
-    request.path
+    request.path,
+    request.branch
   );
   const source = {
-    id: request.id,
-    name: request.name,
-    api: request.api,
-    accessToken: request.accessToken,
-    owner: request.owner,
-    repo: request.repo,
-    path: request.path,
+    ...request,
     content: contents
   };
   const normalizedSource = normalize([source], sourceListSchema);

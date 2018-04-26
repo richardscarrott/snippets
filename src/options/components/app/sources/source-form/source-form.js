@@ -27,6 +27,7 @@ class SourceForm extends Component {
   render() {
     const {
       onClose,
+      url,
       name,
       api,
       accessToken,
@@ -82,6 +83,16 @@ class SourceForm extends Component {
             fullWidth
           />
           <ReduxFormTextField
+            {...url.input}
+            meta={url.meta}
+            margin="dense"
+            id="GitHub URL"
+            label="GitHub URL *"
+            placeholder="e.g. https://github.com/bgrins/devtools-snippets/tree/master/snippets"
+            type="text"
+            fullWidth
+          />
+          {/*<ReduxFormTextField
             {...api.input}
             meta={api.meta}
             margin="dense"
@@ -90,7 +101,7 @@ class SourceForm extends Component {
             type="url"
             placeholder="e.g. https://api.github.com"
             fullWidth
-          />
+          />*/}
           <ReduxFormTextField
             {...accessToken.input}
             meta={accessToken.meta}
@@ -101,7 +112,7 @@ class SourceForm extends Component {
             helperText={<GithubAccessTokenHelperText />}
             fullWidth
           />
-          <ReduxFormTextField
+          {/*<ReduxFormTextField
             {...owner.input}
             meta={owner.meta}
             margin="dense"
@@ -131,7 +142,7 @@ class SourceForm extends Component {
             placeholder="e.g. src/snippets"
             helperText="Given https://github.com/facebook/react/tree/master/src/snippets, the path would be 'src/snippets', default to root"
             fullWidth
-          />
+          />*/}
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose} color="primary">
@@ -147,11 +158,12 @@ class SourceForm extends Component {
 }
 
 const validate = combineValidators({
+  url: composeValidators(isRequired)('Url'), // TODO: parse it, then validate each part.
   name: composeValidators(isRequired)('Name'),
-  api: composeValidators(isRequired)('GitHub API'),
-  accessToken: composeValidators(isRequired)('GitHub Access Token'), // Could make this optional?
-  owner: composeValidators(isRequired)('Owner'),
-  repo: composeValidators(isRequired)('Repo')
+  // api: composeValidators(isRequired)('GitHub API'),
+  accessToken: composeValidators(isRequired)('GitHub Access Token') // Could make this optional?
+  // owner: composeValidators(isRequired)('Owner'),
+  // repo: composeValidators(isRequired)('Repo')
 });
 
 export default reduxForm({
@@ -163,7 +175,7 @@ export default reduxForm({
   return (
     <Fields
       {...props}
-      names={['name', 'api', 'accessToken', 'owner', 'repo', 'path']}
+      names={['name', 'url', 'accessToken']}
       component={SourceForm}
     />
   );
