@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'material-ui/Button';
+import { parseGithubUrl } from '../../../../utils/parse-github-url';
 import {
   DialogActions,
   DialogContent,
@@ -12,6 +13,14 @@ import { LinearProgress } from 'material-ui/Progress';
 import Typography from 'material-ui/Typography';
 import ReduxFormTextField from '../../../lib/redux-form-text-field/redux-form-text-field';
 import GithubAccessTokenHelperText from './github-access-token-helper-text/github-access-token-helper-text';
+
+const endpoint = ({ api, owner, repo, path, branch }) => {
+  console.log(api, owner, repo, path, branch, '<------------');
+  const fullPath = path
+    ? `repos/${owner}/${repo}/contents/${path}`
+    : `repos/${owner}/${repo}/contents`;
+  return new URL(`${fullPath}?ref=${branch}`, api);
+};
 
 class SourceForm extends Component {
   componentWillReceiveProps(nextProps) {
@@ -38,6 +47,12 @@ class SourceForm extends Component {
       status,
       pendingStatus
     } = this.props;
+    let parsedUrl = '';
+    try {
+      parsedUrl = endpoint(parseGithubUrl(url.input.value));
+    } catch (ex) {
+      console.error(ex);
+    }
     return (
       <form onSubmit={handleSubmit} noValidate>
         {status === pendingStatus ? <LinearProgress /> : null}
@@ -90,8 +105,11 @@ class SourceForm extends Component {
             label="GitHub URL *"
             placeholder="e.g. https://github.com/bgrins/devtools-snippets/tree/master/snippets"
             type="text"
+            autoComplete="off"
             fullWidth
+            helperText={url.input.value && parsedUrl.toString()}
           />
+          {/* TODO: Replace null with red 'unknown' */}
           {/*<ReduxFormTextField
             {...api.input}
             meta={api.meta}

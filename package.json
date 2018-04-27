@@ -4,7 +4,7 @@
   "description": "Add JavaScript snippets to your context menu",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prestart": "npm run clean",
     "start": "webpack --config ./build/webpack-config.js --env development --watch",
     "prebuild": "npm run clean",
@@ -19,6 +19,7 @@
     "@types/chrome": "0.0.60",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -29,6 +30,7 @@
     "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
+    "jest": "^22.4.3",
     "mini-css-extract-plugin": "^0.2.0",
     "style-loader": "^0.20.2",
     "url-loader": "^1.0.1",
@@ -38,6 +40,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "history": "^4.7.2",
+    "lodash.trimend": "^4.5.1",
     "material-ui": "^1.0.0-beta.42",
     "material-ui-icons": "^1.0.0-beta.36",
     "murmurhash-js": "^1.0.0",
