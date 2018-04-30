@@ -30,20 +30,10 @@ function* addSourceWithCancel(source) {
   ]);
 }
 
-const getSource = ({ id, name, url, accessToken }) => {
-  return {
-    id,
-    name,
-    url,
-    accessToken
-  };
-};
-
 function* watchAddSource() {
   while (true) {
     const action = yield take(ADD_SOURCE_REQUESTED);
-    const source = getSource(action.payload);
-    yield fork(addSourceWithCancel, source);
+    yield fork(addSourceWithCancel, action.payload);
   }
 }
 
