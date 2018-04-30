@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'material-ui/Button';
-import { parseGithubUrl } from '../../../../utils/parse-github-url';
+import { createValidator } from 'revalidate';
+import { parseGitHubUrl } from '../../../../../utils/parse-github-url/parse-github-url';
 import {
   DialogActions,
   DialogContent,
@@ -13,14 +14,6 @@ import { LinearProgress } from 'material-ui/Progress';
 import Typography from 'material-ui/Typography';
 import ReduxFormTextField from '../../../lib/redux-form-text-field/redux-form-text-field';
 import GithubAccessTokenHelperText from './github-access-token-helper-text/github-access-token-helper-text';
-
-const endpoint = ({ api, owner, repo, path, branch }) => {
-  console.log(api, owner, repo, path, branch, '<------------');
-  const fullPath = path
-    ? `repos/${owner}/${repo}/contents/${path}`
-    : `repos/${owner}/${repo}/contents`;
-  return new URL(`${fullPath}?ref=${branch}`, api);
-};
 
 class SourceForm extends Component {
   componentWillReceiveProps(nextProps) {
@@ -47,12 +40,6 @@ class SourceForm extends Component {
       status,
       pendingStatus
     } = this.props;
-    let parsedUrl = '';
-    try {
-      parsedUrl = endpoint(parseGithubUrl(url.input.value));
-    } catch (ex) {
-      console.error(ex);
-    }
     return (
       <form onSubmit={handleSubmit} noValidate>
         {status === pendingStatus ? <LinearProgress /> : null}
@@ -101,25 +88,12 @@ class SourceForm extends Component {
             {...url.input}
             meta={url.meta}
             margin="dense"
-            id="GitHub URL"
+            id="url"
             label="GitHub URL *"
-            placeholder="e.g. https://github.com/bgrins/devtools-snippets/tree/master/snippets"
-            type="text"
-            autoComplete="off"
-            fullWidth
-            helperText={url.input.value && parsedUrl.toString()}
-          />
-          {/* TODO: Replace null with red 'unknown' */}
-          {/*<ReduxFormTextField
-            {...api.input}
-            meta={api.meta}
-            margin="dense"
-            id="api"
-            label="Github API *"
             type="url"
-            placeholder="e.g. https://api.github.com"
             fullWidth
-          />*/}
+            helperText="A GitHub url pointing to a directory containing JavaScript files, e.g. https://github.com/bgrins/devtools-snippets/tree/master/snippets"
+          />
           <ReduxFormTextField
             {...accessToken.input}
             meta={accessToken.meta}
@@ -130,37 +104,6 @@ class SourceForm extends Component {
             helperText={<GithubAccessTokenHelperText />}
             fullWidth
           />
-          {/*<ReduxFormTextField
-            {...owner.input}
-            meta={owner.meta}
-            margin="dense"
-            id="owner"
-            label="Owner *"
-            type="text"
-            helperText="Given https://github.com/facebook/react, the owner would be 'facebook'"
-            fullWidth
-          />
-          <ReduxFormTextField
-            {...repo.input}
-            meta={repo.meta}
-            margin="dense"
-            id="repo"
-            label="Repo *"
-            type="text"
-            helperText="Given https://github.com/facebook/react, the repo would be 'react'"
-            fullWidth
-          />
-          <ReduxFormTextField
-            {...path.input}
-            meta={path.meta}
-            margin="dense"
-            id="path"
-            label="Path"
-            type="text"
-            placeholder="e.g. src/snippets"
-            helperText="Given https://github.com/facebook/react/tree/master/src/snippets, the path would be 'src/snippets', default to root"
-            fullWidth
-          />*/}
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose} color="primary">
@@ -175,13 +118,26 @@ class SourceForm extends Component {
   }
 }
 
+const isValidUrl = createValidator(
+  message => value => {
+    const { api, owner, repo, branch } = parseGitHubUrl(value);
+    const error = [api, owner, repo, branch].reduce((acc, val) => {
+      if (val === null) {
+        return true;
+      }
+      return acc;
+    }, false);
+    if (error) {
+      return message;
+    }
+  },
+  field => `${field} cannot be parsed`
+);
+
 const validate = combineValidators({
-  url: composeValidators(isRequired)('Url'), // TODO: parse it, then validate each part.
+  url: composeValidators(isRequired, isValidUrl)('GitHub Url'),
   name: composeValidators(isRequired)('Name'),
-  // api: composeValidators(isRequired)('GitHub API'),
   accessToken: composeValidators(isRequired)('GitHub Access Token') // Could make this optional?
-  // owner: composeValidators(isRequired)('Owner'),
-  // repo: composeValidators(isRequired)('Repo')
 });
 
 export default reduxForm({

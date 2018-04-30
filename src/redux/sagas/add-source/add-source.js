@@ -1,5 +1,5 @@
 import { fork, take, call, put, race } from 'redux-saga/effects';
-import { parseGithubUrl } from '../../../options/utils/parse-github-url';
+import { parseGitHubUrl } from '../../../utils/parse-github-url/parse-github-url';
 import fetchSource from '../../../api/fetch-source/fetch-source';
 import {
   ADD_SOURCE_REQUESTED,
@@ -35,8 +35,7 @@ const getSource = ({ id, name, url, accessToken }) => {
     id,
     name,
     url,
-    accessToken,
-    ...parseGithubUrl(url)
+    accessToken
   };
 };
 

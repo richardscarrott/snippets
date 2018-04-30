@@ -20,7 +20,7 @@
     "chrome_style": false,
     "open_in_tab": true
   },
-  "permissions": ["contextMenus", "storage"],
+  "permissions": ["contextMenus", "storage", "unlimitedStorage"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
