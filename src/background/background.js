@@ -28,7 +28,13 @@ const createCallback = (resolve, reject) => () => {
 
 const createContextMenu = options =>
   new Promise((resolve, reject) =>
-    chrome.contextMenus.create(options, createCallback(resolve, reject))
+    chrome.contextMenus.create(
+      {
+        contexts: ['all'],
+        ...options
+      },
+      createCallback(resolve, reject)
+    )
   );
 
 const removeAllContextMenus = () =>
