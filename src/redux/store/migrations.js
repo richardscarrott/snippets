@@ -1,7 +1,7 @@
 export const MIGRATED = 'MIGRATED';
 
 export const migrations = {
-  11: () => {
+  1: () => {
     return {
       ui: {
         snackbar: {
