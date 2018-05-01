@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, createMigrate } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
@@ -9,29 +9,36 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [sagaMiddleware];
 
-const persistedRootReducer = persistReducer(
-  {
-    key: 'root',
-    storage: chromeLocalStorage
-  },
-  rootReducer
+const migrations = {
+    // TODO: Not enough users to be too concerned but perhaps should alert explaining why their data
+    // will be removed?
+    1: (state) => ({})
+}
+
+const persistedRootReducer = persistReducer({
+        key: 'root',
+        version: 1,
+        storage: chromeLocalStorage,
+        migrate: createMigrate(migrations, { debug: true }),
+    },
+    rootReducer
 );
 
 const configureStore = initialState => {
-  const store = createStore(
-    persistedRootReducer,
-    initialState,
-    compose(
-      applyMiddleware(...middleware),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
-  );
+    const store = createStore(
+        persistedRootReducer,
+        initialState,
+        compose(
+            applyMiddleware(...middleware),
+            window.devToolsExtension ? window.devToolsExtension() : f => f
+        )
+    );
 
-  const persistor = persistStore(store);
+    const persistor = persistStore(store);
 
-  sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run(rootSaga);
 
-  return [store, persistor];
+    return [store, persistor];
 };
 
 export default configureStore;
