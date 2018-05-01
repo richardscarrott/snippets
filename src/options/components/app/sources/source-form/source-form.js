@@ -141,10 +141,7 @@ const validate = combineValidators({
 });
 
 export default reduxForm({
-  validate,
-  initialValues: {
-    api: 'https://api.github.com'
-  }
+  validate
 })(props => {
   return (
     <Fields
