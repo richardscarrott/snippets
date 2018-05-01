@@ -21,8 +21,10 @@ import NoResults from './no-results/no-results';
 import AddedSnackbar from './added-snackbar/added-snackbar';
 import DeletedSnackbar from './deleted-snackbar/deleted-snackbar';
 import RefreshedSnackbar from './refreshed-snackbar/refreshed-snackbar';
+import MigratedSnackbar from './migrated-snackbar/migrated-snackbar';
 import { sourcesSelector } from '../../../../redux/selectors/sources/sources';
 import { snackbarSelector } from '../../../../redux/selectors/ui/ui';
+import { MIGRATED } from '../../../../redux/store/migrations';
 import styles from './sources.css';
 
 const AddSourceRoute = props => (
@@ -90,6 +92,11 @@ class Sources extends Component {
           open={snackbar.type === SOURCE_DELETED}
           source={snackbar.payload}
           onUndo={onDeleteUndo}
+          onClose={onSnackbarClose}
+        />
+        <MigratedSnackbar
+          open={snackbar.type === MIGRATED}
+          payload={snackbar.payload}
           onClose={onSnackbarClose}
         />
       </Fragment>

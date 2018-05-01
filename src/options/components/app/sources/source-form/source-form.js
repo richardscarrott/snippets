@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'material-ui/Button';
+import { createValidator } from 'revalidate';
+import { parseGitHubUrl } from '../../../../../utils/parse-github-url/parse-github-url';
 import {
   DialogActions,
   DialogContent,
@@ -27,6 +29,7 @@ class SourceForm extends Component {
   render() {
     const {
       onClose,
+      url,
       name,
       api,
       accessToken,
@@ -34,11 +37,22 @@ class SourceForm extends Component {
       repo,
       path,
       handleSubmit,
+      onSubmit,
       status,
       pendingStatus
     } = this.props;
     return (
-      <form onSubmit={handleSubmit} noValidate>
+      <form
+        onSubmit={handleSubmit(data => {
+          onSubmit(
+            Object.entries(data).reduce((normalizedData, [key, value]) => {
+              normalizedData[key] = value.trim();
+              return normalizedData;
+            }, {})
+          );
+        })}
+        noValidate
+      >
         {status === pendingStatus ? <LinearProgress /> : null}
         <DialogTitle id="form-add-source">Add Source</DialogTitle>
         <DialogContent>
@@ -82,14 +96,14 @@ class SourceForm extends Component {
             fullWidth
           />
           <ReduxFormTextField
-            {...api.input}
-            meta={api.meta}
+            {...url.input}
+            meta={url.meta}
             margin="dense"
-            id="api"
-            label="Github API *"
+            id="url"
+            label="GitHub URL *"
             type="url"
-            placeholder="e.g. https://api.github.com"
             fullWidth
+            helperText="A GitHub url pointing to a directory containing JavaScript files, e.g. https://github.com/bgrins/devtools-snippets/tree/master/snippets"
           />
           <ReduxFormTextField
             {...accessToken.input}
@@ -99,37 +113,6 @@ class SourceForm extends Component {
             label="GitHub Access Token *"
             type="text"
             helperText={<GithubAccessTokenHelperText />}
-            fullWidth
-          />
-          <ReduxFormTextField
-            {...owner.input}
-            meta={owner.meta}
-            margin="dense"
-            id="owner"
-            label="Owner *"
-            type="text"
-            helperText="Given https://github.com/facebook/react, the owner would be 'facebook'"
-            fullWidth
-          />
-          <ReduxFormTextField
-            {...repo.input}
-            meta={repo.meta}
-            margin="dense"
-            id="repo"
-            label="Repo *"
-            type="text"
-            helperText="Given https://github.com/facebook/react, the repo would be 'react'"
-            fullWidth
-          />
-          <ReduxFormTextField
-            {...path.input}
-            meta={path.meta}
-            margin="dense"
-            id="path"
-            label="Path"
-            type="text"
-            placeholder="e.g. src/snippets"
-            helperText="Given https://github.com/facebook/react/tree/master/src/snippets, the path would be 'src/snippets', default to root"
             fullWidth
           />
         </DialogContent>
@@ -146,24 +129,35 @@ class SourceForm extends Component {
   }
 }
 
+const isValidUrl = createValidator(
+  message => value => {
+    const { api, owner, repo, branch } = parseGitHubUrl(value);
+    const error = [api, owner, repo, branch].reduce((acc, val) => {
+      if (val === null) {
+        return true;
+      }
+      return acc;
+    }, false);
+    if (error) {
+      return message;
+    }
+  },
+  field => `${field} cannot be parsed`
+);
+
 const validate = combineValidators({
+  url: composeValidators(isRequired, isValidUrl)('GitHub Url'),
   name: composeValidators(isRequired)('Name'),
-  api: composeValidators(isRequired)('GitHub API'),
-  accessToken: composeValidators(isRequired)('GitHub Access Token'), // Could make this optional?
-  owner: composeValidators(isRequired)('Owner'),
-  repo: composeValidators(isRequired)('Repo')
+  accessToken: composeValidators(isRequired)('GitHub Access Token') // Could make this optional?
 });
 
 export default reduxForm({
-  validate,
-  initialValues: {
-    api: 'https://api.github.com'
-  }
+  validate
 })(props => {
   return (
     <Fields
       {...props}
-      names={['name', 'api', 'accessToken', 'owner', 'repo', 'path']}
+      names={['name', 'url', 'accessToken']}
       component={SourceForm}
     />
   );

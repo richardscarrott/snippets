@@ -1,21 +1,36 @@
 import { normalize, schema } from 'normalizr';
 import { murmur2 } from 'murmurhash-js';
 import uuid from 'uuid/v1';
+import { parseGitHubUrl } from '../../utils/parse-github-url/parse-github-url';
 
-const endpoint = (api, owner, repo, path) => {
+// TODO: Improve this, it oddly enough depends on a trailing slash
+// being on v3/ of the api...
+const endpoint = (api, owner, repo, path, branch) => {
   const fullPath = path
     ? `repos/${owner}/${repo}/contents/${path}`
     : `repos/${owner}/${repo}/contents`;
-  return new URL(fullPath, api);
+  return new URL(`${fullPath}?ref=${branch}`, api);
 };
 
-const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
-  const response = await window.fetch(endpoint(api, owner, repo, path), {
-    headers: {
-      Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${accessToken}`
+const fetchContents = async (
+  name,
+  id,
+  api,
+  accessToken,
+  owner,
+  repo,
+  path,
+  branch
+) => {
+  const response = await window.fetch(
+    endpoint(api, owner, repo, path, branch),
+    {
+      headers: {
+        Accept: 'application/vnd.github.v3+json',
+        Authorization: `token ${accessToken}`
+      }
     }
-  });
+  );
   // TODO: Better error handling / messaging
   if (response.status !== 200) {
     throw new Error(`Expected 200, received ${response.status}`);
@@ -34,7 +49,8 @@ const fetchContents = async (name, id, api, accessToken, owner, repo, path) => {
             accessToken,
             owner,
             repo,
-            content.path
+            content.path,
+            branch
           )
         )
       )
@@ -67,25 +83,21 @@ const sourceSchema = new schema.Entity('sources', {
 export const sourceListSchema = new schema.Array(sourceSchema);
 
 const fetchSource = async request => {
+  const { api, owner, repo, path, branch } = parseGitHubUrl(request.url);
   const contents = await fetchContents(
     request.name,
     // NOTE: Github contents api doesn't return the `sha` of
     // dir at `path`, so having to generate a unique id in client.
     uuid(),
-    request.api,
+    api,
     request.accessToken,
-    request.owner,
-    request.repo,
-    request.path
+    owner,
+    repo,
+    path,
+    branch
   );
   const source = {
-    id: request.id,
-    name: request.name,
-    api: request.api,
-    accessToken: request.accessToken,
-    owner: request.owner,
-    repo: request.repo,
-    path: request.path,
+    ...request,
     content: contents
   };
   const normalizedSource = normalize([source], sourceListSchema);

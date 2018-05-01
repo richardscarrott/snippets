@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, createMigrate } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
 import { chromeLocalStorage } from './storage';
+import { migrations } from './migrations';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,7 +13,9 @@ const middleware = [sagaMiddleware];
 const persistedRootReducer = persistReducer(
   {
     key: 'root',
-    storage: chromeLocalStorage
+    version: 1,
+    storage: chromeLocalStorage,
+    migrate: createMigrate(migrations, { debug: false })
   },
   rootReducer
 );
