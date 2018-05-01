@@ -37,11 +37,22 @@ class SourceForm extends Component {
       repo,
       path,
       handleSubmit,
+      onSubmit,
       status,
       pendingStatus
     } = this.props;
     return (
-      <form onSubmit={handleSubmit} noValidate>
+      <form
+        onSubmit={handleSubmit(data => {
+          onSubmit(
+            Object.entries(data).reduce((normalizedData, [key, value]) => {
+              normalizedData[key] = value.trim();
+              return normalizedData;
+            }, {})
+          );
+        })}
+        noValidate
+      >
         {status === pendingStatus ? <LinearProgress /> : null}
         <DialogTitle id="form-add-source">Add Source</DialogTitle>
         <DialogContent>
