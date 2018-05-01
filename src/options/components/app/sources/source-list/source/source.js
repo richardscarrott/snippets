@@ -58,7 +58,7 @@ class Source extends Component {
       repo,
       path,
       meta: { status },
-      description
+      url
     } = this.props;
     const { anchorEl } = this.state;
     return (
@@ -66,7 +66,7 @@ class Source extends Component {
         <ListItemIcon>
           {status === 'READING' ? <CircularProgress size={24} /> : <CodeIcon />}
         </ListItemIcon>
-        <ListItemText primary={name} secondary={description} />
+        <ListItemText primary={name} secondary={url} />
         <ListItemSecondaryAction onClick={this.handleMenuOpen}>
           <IconButton>
             <MoreVertIcon />

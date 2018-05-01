@@ -1,26 +1,12 @@
 import { createSelector } from 'reselect';
 import { denormalize } from 'normalizr';
-import {
-  sourceListSchema,
-  endpoint
-} from '../../../api/fetch-source/fetch-source';
+import { sourceListSchema } from '../../../api/fetch-source/fetch-source';
 
 export const entitiesSelector = state => state.entities;
 
 export const sourcesMetaSelector = state => state.sources.meta;
 
 export const sourcesDataSelector = state => state.sources.data;
-
-export const getDescription = source => {
-  const { url, api, owner, repo, path } = source;
-  if (url) {
-    return url;
-  }
-  // This is for backwards compat...prob irrelevant at this point.
-  // could just change the redux:persist key for now.
-  const displayPath = `${owner}/${repo}/${path}`.replace(/([^:]\/)\/+/g, '$1');
-  return new URL(displayPath, api).href;
-};
 
 export const sourcesSelector = createSelector(
   sourcesDataSelector,
@@ -30,8 +16,7 @@ export const sourcesSelector = createSelector(
     return denormalize(sourcesData, sourceListSchema, entities)
       .map(source => ({
         ...source,
-        meta: sourcesMeta[source.id],
-        description: getDescription(source)
+        meta: sourcesMeta[source.id]
       }))
       .filter(source => !source.meta.deleted);
   }
