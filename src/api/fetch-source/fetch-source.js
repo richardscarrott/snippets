@@ -36,29 +36,31 @@ const fetchContents = async (
     throw new Error(`Expected 200, received ${response.status}`);
   }
   const contents = await response.json();
+  // console.log(contents);
   if (Array.isArray(contents)) {
     return {
       id,
       name,
       content: await Promise.all(
-        contents.map(content =>
-          fetchContents(
+        contents.map(content => {
+          console.log(content, '<----');
+          return fetchContents(
             content.name,
-            content.sha,
+            uuid(),
             api,
             accessToken,
             owner,
             repo,
             content.path,
             branch
-          )
-        )
+          );
+        })
       )
     };
   } else if (contents.type === 'file') {
     return {
-      id: contents.sha,
-      name: contents.name,
+      id,
+      name,
       content: contents.content
     };
   }
@@ -84,10 +86,10 @@ export const sourceListSchema = new schema.Array(sourceSchema);
 
 const fetchSource = async request => {
   const { api, owner, repo, path, branch } = parseGitHubUrl(request.url);
+  const pathParts = path ? path.split('/') : null;
+  const name = pathParts ? pathParts[pathParts.length - 1] : '/';
   const contents = await fetchContents(
-    request.name,
-    // NOTE: Github contents api doesn't return the `sha` of
-    // dir at `path`, so having to generate a unique id in client.
+    name,
     uuid(),
     api,
     request.accessToken,
@@ -99,6 +101,7 @@ const fetchSource = async request => {
   const source = {
     ...request,
     content: contents
+    // content: Array.isArray(contents.content) ? contents.content : contents
   };
   const normalizedSource = normalize([source], sourceListSchema);
   return normalizedSource;

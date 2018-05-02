@@ -44,7 +44,9 @@ const removeAllContextMenus = () =>
 
 const isDir = content => Array.isArray(content.content);
 
-const isFile = content => !isDir(content);
+const isSource = content => !!content.url;
+
+const isFile = content => !isDir(content) && !isSource(content);
 
 const isFileRenderable = file => file.name.endsWith('.js');
 
@@ -58,6 +60,7 @@ const isContentRenderable = content => {
 };
 
 const renderContentContextMenu = (content, parentId) => {
+  debugger;
   if (isFile(content) && !isFileRenderable(content)) {
     return;
   }
@@ -98,7 +101,7 @@ const render = state => {
       const sources = sourcesSelector(state);
       return Promise.all(
         sources.map(source =>
-          renderContentContextMenu(source.content, TOP_LEVEL_CONTEXT_MENU_ID)
+          renderContentContextMenu(source, TOP_LEVEL_CONTEXT_MENU_ID)
         )
       ).then(() => sources.length);
     })
