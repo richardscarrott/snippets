@@ -1,7 +1,11 @@
 import 'babel-polyfill';
 import uuid from 'uuid/v1';
 import configureStore from '../redux/store/configure-store';
-import { sourcesSelector } from '../redux/selectors/sources/sources';
+import {
+  sourcesSelector,
+  filesSelector
+} from '../redux/selectors/sources/sources';
+import fuzzysort from 'fuzzysort';
 
 const ID_DELIMITER = '/';
 
@@ -144,3 +148,40 @@ persistor.subscribe(() => {
 });
 
 chrome.browserAction.onClicked.addListener(() => openOptionsPage());
+
+setTimeout(() => {
+  // https://developer.chrome.com/extensions/omnibox
+  const state = store.getState();
+  const files = filesSelector(state);
+  // This event is fired with the user accepts the input in the omnibox.
+  chrome.omnibox.onInputChanged.addListener((text, suggest) => {
+    // console.log(text, 'M-----');
+    const result = fuzzysort.go(text, files, { key: 'path' });
+    const suggestions = result.map(result => {
+      console.log(fuzzysort.highlight(result), '<---');
+      return {
+        content: result.obj.name, // prob should be the path, that way we can find the content in onInputEntered.
+        description:
+          '<url>' +
+          fuzzysort.highlight(result, '<match>', '</match>') +
+          '</url>', // result.obj.path,
+        deletable: false
+      };
+    });
+    suggest(suggestions);
+    // [
+    //   {
+    //     content: 'hello content',
+    //     description: 'hello description',
+    //     deletable: false
+    //   }
+    // ]);
+    // chrome.omnibox.setDefaultSuggestion(object suggestion)
+    // Encode user input for special characters , / ? : @ & = + $ #
+    // var newURL = 'https://www.google.com/search?q=' + encodeURIComponent(text);
+    // chrome.tabs.create({ url: newURL });
+  });
+  chrome.omnibox.onInputEntered.addListener(text => {
+    console.log('Running snippet', text);
+  });
+}, 2000);

@@ -44,33 +44,36 @@ const isDir = content => Array.isArray(content.content);
 const isFile = content => !isDir(content);
 
 const contentToFiles = (content, path, files) => {
-  debugger;
   if (isFile(content)) {
-    return {
-      name: content.name,
-      path: `${path}/${content.name}`
-    };
+    files = files.concat([
+      {
+        id: content.id,
+        name: content.name,
+        path: `${path}/${content.name}`
+      }
+    ]);
+    return files;
   }
-  const nextFiles = content.content.map(c =>
-    contentToFiles(c, path ? `${path}/${content.name}` : content.name, files)
-  );
-  return files.concat(nextFiles);
-  // return flatten(
-  //   content.content.map(c =>
-  //     contentToFiles(c, path ? `${path}/${content.name}` : content.name)
-  //   )
-  // );
+  content.content.forEach(c => {
+    // This isn't v. functional as it changes reference to mutates...could
+    // perhaps
+    files = contentToFiles(
+      c,
+      path ? `${path}/${content.name}` : content.name,
+      files
+    );
+  });
+  return files;
 };
 
 // TODO: Rename to fileTargetsSelector?
 export const filesSelector = createSelector(sourcesSelector, sources => {
-  console.log(sources, '<---');
   // Tthis `source` is what the data will be like, i.e. source will have an array of content, always.
   const source = {
     ...sources[0],
     content: [sources[0].content]
   };
-  console.log(source, '<--');
+  // console.log(source, '<--');
   return contentToFiles(source, null, []);
   // return sources.reduce((files, source) => {
   //   // TODO: This will be less weird once work on supporting files has been done.
