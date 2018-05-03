@@ -34,36 +34,36 @@ export const sourceSelector = createSelector(
   (entities, props) => entities.sources[props.id]
 );
 
-// const flatten = arr => [].concat.apply([], arr);
-const flatten = arr => {
-  console.log('fltten', arr);
-  return [].concat.apply([], arr);
-};
+const flatten = arr => [].concat.apply([], arr);
+
+function flattenDeep(arr) {
+  console.log('flattenDeep', arr);
+  return arr.reduce(
+    (acc, e) => (Array.isArray(e) ? acc.concat(flattenDeep(e)) : acc.concat(e)),
+    []
+  );
+}
 
 const isDir = content => Array.isArray(content.content);
 const isFile = content => !isDir(content);
 
-const contentToFiles = (content, path, files) => {
+const getFiles = (content, path) => {
   if (isFile(content)) {
-    files = files.concat([
+    return [
       {
         id: content.id,
         name: content.name,
         path: `${path}/${content.name}`
       }
-    ]);
-    return files;
+    ];
   }
-  content.content.forEach(c => {
-    // This isn't v. functional as it changes reference to mutates...could
-    // perhaps
-    files = contentToFiles(
-      c,
-      path ? `${path}/${content.name}` : content.name,
-      files
-    );
-  });
-  return files;
+  return content.content.reduce(
+    (files, childContent) =>
+      files.concat(
+        getFiles(childContent, path ? `${path}/${content.name}` : content.name)
+      ),
+    []
+  );
 };
 
 // TODO: Rename to fileTargetsSelector?
@@ -73,10 +73,5 @@ export const filesSelector = createSelector(sourcesSelector, sources => {
     ...sources[0],
     content: [sources[0].content]
   };
-  // console.log(source, '<--');
-  return contentToFiles(source, null, []);
-  // return sources.reduce((files, source) => {
-  //   // TODO: This will be less weird once work on supporting files has been done.
-  //   return files.concat(contentToFiles(source.content, source.name));
-  // }, []);
+  return getFiles(source);
 });
