@@ -3,106 +3,380 @@ import { filesSelector } from './sources';
 const state = {
   entities: {
     sources: {
-      'fcbe26c0-4d76-11e8-b555-8b61f2cc806d': {
-        name: '    fasd   sfad',
+      '0b45edc0-5053-11e8-8463-1398ef7a3c84': {
+        name: 'test',
         url:
           'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: 'fcbe26c0-4d76-11e8-b555-8b61f2cc806d',
-        content: {
-          id: '04f54530-4d77-11e8-a87e-936d935c183f',
-          schema: 'dirs'
-        }
-      },
-      '8d06b2b0-4d7c-11e8-874b-9dd2db0d9840': {
-        name:
-          '                                        a d dfefefefefe f ef . fe fe . e f .            ',
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: '8d06b2b0-4d7c-11e8-874b-9dd2db0d9840',
-        content: {
-          id: '97c95e00-4d7c-11e8-83fd-0180254d46e4',
-          schema: 'dirs'
-        }
-      },
-      'a1b16b50-4d7d-11e8-a155-1772a868f659': {
-        name: 'dfs sf s',
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: 'a1b16b50-4d7d-11e8-a155-1772a868f659',
-        content: {
-          id: 'a6912160-4d7d-11e8-83fd-0180254d46e4',
-          schema: 'dirs'
-        }
-      },
-      'e84ef6e0-4d7d-11e8-aed5-e572e0a14711': {
-        name: 'fsda j j dfsj fds ijofweijo ijo w ioj .',
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: 'e84ef6e0-4d7d-11e8-aed5-e572e0a14711',
-        content: {
-          id: 'f8030b80-4d7d-11e8-83fd-0180254d46e4',
-          schema: 'dirs'
-        }
-      },
-      '268f3e60-4d7e-11e8-aced-3791003a1c93': {
-        name: "foo                                     '",
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: '268f3e60-4d7e-11e8-aced-3791003a1c93',
-        content: {
-          id: '362df640-4d7e-11e8-9990-e3d32a96d540',
-          schema: 'dirs'
-        }
-      },
-      '8380bb30-4d7e-11e8-aced-3791003a1c93': {
-        name: 'Test Snippets',
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: '8380bb30-4d7e-11e8-aced-3791003a1c93',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '0b45edc0-5053-11e8-8463-1398ef7a3c84',
+        content: [
+          {
+            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
+            schema: 'dirs'
+          },
+          {
+            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+            schema: 'files'
+          },
+          {
+            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
+            schema: 'files'
+          },
+          {
+            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
+            schema: 'dirs'
+          },
+          {
+            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
+            schema: 'files'
+          },
+          {
+            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
+            schema: 'files'
+          },
+          {
+            id: '83863bd2f718f25e2c158318bf585f072c744162',
+            schema: 'dirs'
+          },
+          {
+            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
+            schema: 'dirs'
+          },
+          {
+            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
+            schema: 'files'
+          },
+          {
+            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            schema: 'files'
+          }
+        ],
         meta: {
           status: 'SUCCESS',
-          receivedAt: 1525295436586
-        },
-        content: {
-          id: 'e0c30eb0-4e50-11e8-915d-83e9ca8f32cf',
-          schema: 'dirs'
+          receivedAt: 1525517841667
         }
       },
-      '2f38b780-4e4b-11e8-bd82-c775a5880b5f': {
-        name: 'Demo',
-        url:
-          'https://github.com/richardscarrott/test-snippets/tree/master/demo',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: '2f38b780-4e4b-11e8-bd82-c775a5880b5f',
-        content: {
-          id: 'e184ff20-4e50-11e8-915d-83e9ca8f32cf',
-          schema: 'dirs'
-        },
-        meta: {
-          status: 'SUCCESS',
-          receivedAt: 1525295202427
-        }
-      },
-      'd71f8bd0-4e4c-11e8-be56-6d520015e65e': {
-        name: 'Demo (file)',
+      '1afbb010-5053-11e8-8463-1398ef7a3c84': {
+        name: 'test (file)',
         url:
           'https://github.com/richardscarrott/test-snippets/blob/master/demo/empty.js',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: 'd71f8bd0-4e4c-11e8-be56-6d520015e65e',
-        content: {
-          id: 'e24b5c60-4e50-11e8-915d-83e9ca8f32cf',
-          schema: 'files'
-        },
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '1afbb010-5053-11e8-8463-1398ef7a3c84',
+        content: [
+          {
+            id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
+            schema: 'files'
+          }
+        ],
         meta: {
           status: 'SUCCESS',
-          receivedAt: 1525296819609
+          receivedAt: 1525517863451
         }
+      },
+      '9857ae20-5057-11e8-b9a6-739adda71566': {
+        name: 'Trainline Web',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/snippets/account',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '9857ae20-5057-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: 'f98defcea2295ef63021c74e066d1e8cdcfa1807',
+            schema: 'files'
+          }
+        ]
+      },
+      '9e9853c0-5057-11e8-b9a6-739adda71566': {
+        name: 'Trainline Web (file)',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/snippets/account/register-autofill.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '9e9853c0-5057-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: 'f98defcea2295ef63021c74e066d1e8cdcfa1807',
+            schema: 'files'
+          }
+        ]
+      },
+      'c5967970-5057-11e8-b9a6-739adda71566': {
+        name: 'Trainline Web',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'c5967970-5057-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
+            schema: 'dirs'
+          },
+          {
+            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+            schema: 'files'
+          },
+          {
+            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
+            schema: 'files'
+          },
+          {
+            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
+            schema: 'dirs'
+          },
+          {
+            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
+            schema: 'files'
+          },
+          {
+            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
+            schema: 'files'
+          },
+          {
+            id: '83863bd2f718f25e2c158318bf585f072c744162',
+            schema: 'dirs'
+          },
+          {
+            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
+            schema: 'dirs'
+          },
+          {
+            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
+            schema: 'files'
+          },
+          {
+            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            schema: 'files'
+          }
+        ],
+        meta: {
+          status: 'SUCCESS',
+          receivedAt: 1525519876549
+        }
+      },
+      'd94f2660-5057-11e8-b9a6-739adda71566': {
+        name: 'Trainline Web (file)',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/snippets/account/register-autofill.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'd94f2660-5057-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: 'f98defcea2295ef63021c74e066d1e8cdcfa1807',
+            schema: 'files'
+          }
+        ],
+        meta: {
+          status: 'SUCCESS',
+          receivedAt: 1525519910340
+        }
+      },
+      '1114f390-5058-11e8-b9a6-739adda71566': {
+        name: 'bahmutov/code-snippets/css-layout',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/css-layout.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '1114f390-5058-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: '16994d42797d8187cfd95155cde3ee87f6ca1266',
+            schema: 'files'
+          }
+        ]
+      },
+      '7d0f29d0-5058-11e8-b9a6-739adda71566': {
+        name: 'bahmutov/code-snippets/first-paint-remote.js',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '7d0f29d0-5058-11e8-b9a6-739adda71566',
+        content: [
+          {
+            id: '01ec30fd30589cd3f80f8e2f77c4f8fd1c590f7b',
+            schema: 'files'
+          }
+        ],
+        meta: {
+          status: 'SUCCESS',
+          receivedAt: 1525520395566
+        }
+      },
+      '6d3d73b0-505b-11e8-ac98-7745f6353963': {
+        name: 'bahmutov/code-snippets/first-paint-remote.js 2',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '6d3d73b0-505b-11e8-ac98-7745f6353963',
+        content: [
+          {
+            id: '7b8e4ed0-505b-11e8-b126-99f9ad4fe745',
+            schema: 'files'
+          }
+        ]
+      },
+      'd47789d0-505b-11e8-ac98-7745f6353963': {
+        name: 'bahmutov/code-snippets/first-paint-remote.js 2',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'd47789d0-505b-11e8-ac98-7745f6353963',
+        content: [
+          {
+            id: 'e0c6a180-505b-11e8-b126-99f9ad4fe745',
+            schema: 'files'
+          }
+        ]
+      },
+      '5bf77f00-505c-11e8-ac98-7745f6353963': {
+        name:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '5bf77f00-505c-11e8-ac98-7745f6353963',
+        content: [
+          {
+            id: '627d43f0-505c-11e8-b126-99f9ad4fe745',
+            schema: 'files'
+          }
+        ]
+      },
+      '606fa430-505d-11e8-814c-e97f2e1d6b4b': {
+        name:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js 2',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '606fa430-505d-11e8-814c-e97f2e1d6b4b',
+        content: [
+          {
+            id: '672811e0-505d-11e8-b0ff-417beb47e78d',
+            schema: 'files'
+          }
+        ]
+      },
+      '703a4e10-505d-11e8-814c-e97f2e1d6b4b': {
+        name: 'bahmutov/code-snippets/first-paint-remote.js 2',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '703a4e10-505d-11e8-814c-e97f2e1d6b4b',
+        content: [
+          {
+            id: '91d86a20-505d-11e8-b0ff-417beb47e78d',
+            schema: 'files'
+          }
+        ]
+      },
+      'a40fce40-505d-11e8-8ecf-9d99d3539c4f': {
+        name: 'bahmutov/code-snippets/first-paint-remote.js 3',
+        url:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'a40fce40-505d-11e8-8ecf-9d99d3539c4f',
+        content: [
+          {
+            id: 'b0958650-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          }
+        ]
+      },
+      'df222e60-505d-11e8-8ecf-9d99d3539c4f': {
+        name: 'richardscarrott/test-snippets',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/snippets',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'df222e60-505d-11e8-8ecf-9d99d3539c4f',
+        content: [
+          {
+            id: 'e7c973c0-505d-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          },
+          {
+            id: 'e7e00900-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: 'e7e6bfc0-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: 'e7e58740-505d-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          },
+          {
+            id: 'e7e86d70-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: 'e7ebc8d0-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: 'e7eb0580-505d-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          },
+          {
+            id: 'e7f4f090-505d-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          },
+          {
+            id: 'e7fcdfd0-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: 'e7fd06e0-505d-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          }
+        ]
+      },
+      '84715d50-505e-11e8-8ecf-9d99d3539c4f': {
+        name: 'Demo (two empty files, same sha)',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/demo',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: '84715d50-505e-11e8-8ecf-9d99d3539c4f',
+        content: [
+          {
+            id: '94689570-505e-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: '94825f00-505e-11e8-93ef-03dd69bebf80',
+            schema: 'files'
+          },
+          {
+            id: '94921670-505e-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          },
+          {
+            id: '94965c30-505e-11e8-93ef-03dd69bebf80',
+            schema: 'dirs'
+          }
+        ]
+      },
+      'f98aef20-505e-11e8-879b-5570db5b57ed': {
+        name: 'Demo 2',
+        url:
+          'https://github.com/richardscarrott/test-snippets/tree/master/demo',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'f98aef20-505e-11e8-879b-5570db5b57ed',
+        content: [
+          {
+            id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
+            schema: 'files'
+          },
+          {
+            id: 'b341e88729a6e9d60bfc15de13bd9135a49e9cc2',
+            schema: 'files'
+          },
+          {
+            id: '00304a00-505f-11e8-ac6a-2bd60a302a50',
+            schema: 'dirs'
+          },
+          {
+            id: '0031d0a0-505f-11e8-ac6a-2bd60a302a50',
+            schema: 'dirs'
+          }
+        ]
       }
     },
     dirs: {
@@ -174,9 +448,9 @@ const state = {
           }
         ]
       },
-      '04f54530-4d77-11e8-a87e-936d935c183f': {
-        id: '04f54530-4d77-11e8-a87e-936d935c183f',
-        name: '    fasd   sfad',
+      '153d59d0-5053-11e8-8dd2-edb298693c77': {
+        id: '153d59d0-5053-11e8-8dd2-edb298693c77',
+        name: 'test',
         content: [
           {
             id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
@@ -220,469 +494,104 @@ const state = {
           }
         ]
       },
-      '97c95e00-4d7c-11e8-83fd-0180254d46e4': {
-        id: '97c95e00-4d7c-11e8-83fd-0180254d46e4',
-        name:
-          '                                        a d dfefefefefe f ef . fe fe . e f .            ',
+      'e7c973c0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7c973c0-505d-11e8-93ef-03dd69bebf80',
+        name: 'account',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: 'e7ff02b0-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      'a6912160-4d7d-11e8-83fd-0180254d46e4': {
-        id: 'a6912160-4d7d-11e8-83fd-0180254d46e4',
-        name: 'dfs sf s',
+      'e7e58740-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7e58740-505d-11e8-93ef-03dd69bebf80',
+        name: 'foo',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: 'e800fe80-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      'f8030b80-4d7d-11e8-83fd-0180254d46e4': {
-        id: 'f8030b80-4d7d-11e8-83fd-0180254d46e4',
-        name: 'fsda j j dfsj fds ijofweijo ijo w ioj .',
+      'e8191a60-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e8191a60-505d-11e8-93ef-03dd69bebf80',
+        name: 'very-very-nested',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+            id: 'e82ffdc0-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           },
           {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: 'e82eec50-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      '362df640-4d7e-11e8-9990-e3d32a96d540': {
-        id: '362df640-4d7e-11e8-9990-e3d32a96d540',
-        name: "foo                                     '",
+      'e7ff29c0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7ff29c0-505d-11e8-93ef-03dd69bebf80',
+        name: 'very-nested',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
+            id: 'e8191a60-505d-11e8-93ef-03dd69bebf80',
             schema: 'dirs'
-          },
+          }
+        ]
+      },
+      'e7eb0580-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7eb0580-505d-11e8-93ef-03dd69bebf80',
+        name: 'nested',
+        content: [
           {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
+            id: 'e7ff29c0-505d-11e8-93ef-03dd69bebf80',
             schema: 'dirs'
-          },
+          }
+        ]
+      },
+      'e7f4f090-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7f4f090-505d-11e8-93ef-03dd69bebf80',
+        name: 'nojs',
+        content: [
           {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
+            id: 'e80a7460-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           },
           {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: 'e80ff2a0-505d-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      '8973dd10-4d7e-11e8-9990-e3d32a96d540': {
-        id: '8973dd10-4d7e-11e8-9990-e3d32a96d540',
-        name: 'Test Snippets',
+      '94921670-505e-11e8-93ef-03dd69bebf80': {
+        id: '94921670-505e-11e8-93ef-03dd69bebf80',
+        name: 'payment-cards',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+            id: '94af1450-505e-11e8-93ef-03dd69bebf80',
             schema: 'files'
           },
           {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: '94af1451-505e-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      'cb0c5360-4e46-11e8-b6a7-0b0cb3109a02': {
-        id: 'cb0c5360-4e46-11e8-b6a7-0b0cb3109a02',
-        name: 'Test Snippets',
+      '94965c30-505e-11e8-93ef-03dd69bebf80': {
+        id: '94965c30-505e-11e8-93ef-03dd69bebf80',
+        name: 'utils',
         content: [
           {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+            id: '94ae9f20-505e-11e8-93ef-03dd69bebf80',
             schema: 'files'
           },
           {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
+            id: '94ae5100-505e-11e8-93ef-03dd69bebf80',
             schema: 'files'
           }
         ]
       },
-      '59739900-4e48-11e8-a36f-b19c8f9dcd55': {
-        id: '59739900-4e48-11e8-a36f-b19c8f9dcd55',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
-            schema: 'files'
-          }
-        ]
-      },
-      'c1c5e070-4e49-11e8-82ad-e77b9b156c52': {
-        id: 'c1c5e070-4e49-11e8-82ad-e77b9b156c52',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
-            schema: 'files'
-          }
-        ]
-      },
-      '3546f7f0-4e4a-11e8-a8a7-732be13643da': {
-        id: '3546f7f0-4e4a-11e8-a8a7-732be13643da',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
-            schema: 'files'
-          }
-        ]
-      },
-      '95587970-4e4a-11e8-86df-89ea5dd390c7': {
-        id: '95587970-4e4a-11e8-86df-89ea5dd390c7',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
-            schema: 'files'
-          }
-        ]
-      },
-      '8471ce881fee48e6507ac447ee809299fe9606a2': {
-        id: '8471ce881fee48e6507ac447ee809299fe9606a2',
+      '00304a00-505f-11e8-ac6a-2bd60a302a50': {
+        id: '00304a00-505f-11e8-ac6a-2bd60a302a50',
         name: 'payment-cards',
         content: [
           {
@@ -695,8 +604,8 @@ const state = {
           }
         ]
       },
-      e0230c1436a39080dab151858285fa0ff5f442da: {
-        id: 'e0230c1436a39080dab151858285fa0ff5f442da',
+      '0031d0a0-505f-11e8-ac6a-2bd60a302a50': {
+        id: '0031d0a0-505f-11e8-ac6a-2bd60a302a50',
         name: 'utils',
         content: [
           {
@@ -706,332 +615,6 @@ const state = {
           {
             id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
             schema: 'files'
-          }
-        ]
-      },
-      '344f0df0-4e4b-11e8-86df-89ea5dd390c7': {
-        id: '344f0df0-4e4b-11e8-86df-89ea5dd390c7',
-        name: 'demo',
-        content: [
-          {
-            id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
-            schema: 'files'
-          },
-          {
-            id: 'b341e88729a6e9d60bfc15de13bd9135a49e9cc2',
-            schema: 'files'
-          },
-          {
-            id: '8471ce881fee48e6507ac447ee809299fe9606a2',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0230c1436a39080dab151858285fa0ff5f442da',
-            schema: 'dirs'
-          }
-        ]
-      },
-      '6ea66600-4e4c-11e8-86df-89ea5dd390c7': {
-        id: '6ea66600-4e4c-11e8-86df-89ea5dd390c7',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e61c62fec6799c2f05d24804c4dcd50e9dd1bc61',
-            schema: 'dirs'
-          },
-          {
-            id: 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-            schema: 'files'
-          },
-          {
-            id: '54f5294c25e16769f370d4fabf589fd0a59d286e',
-            schema: 'files'
-          },
-          {
-            id: 'a006d5821cc5365774514d65793696ff7f1997f8',
-            schema: 'dirs'
-          },
-          {
-            id: 'ce312c8a5f3e4ac7faee9c75f8846a45f7cd9c7d',
-            schema: 'files'
-          },
-          {
-            id: 'c9dfcbcc69e5384ba05dad46acbfba35865e453c',
-            schema: 'files'
-          },
-          {
-            id: '83863bd2f718f25e2c158318bf585f072c744162',
-            schema: 'dirs'
-          },
-          {
-            id: '3cf3d2d0c7407330bc894fb1dc645a3e44c7b0aa',
-            schema: 'dirs'
-          },
-          {
-            id: 'add03be3983eba9555d96ac5adb2ccefb491dd03',
-            schema: 'files'
-          },
-          {
-            id: 'f420a2ae6faf8ebec21fa121f1e049ff33931b48',
-            schema: 'files'
-          }
-        ]
-      },
-      '75fee440-4e4c-11e8-86df-89ea5dd390c7': {
-        id: '75fee440-4e4c-11e8-86df-89ea5dd390c7',
-        name: 'demo',
-        content: [
-          {
-            id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
-            schema: 'files'
-          },
-          {
-            id: 'b341e88729a6e9d60bfc15de13bd9135a49e9cc2',
-            schema: 'files'
-          },
-          {
-            id: '8471ce881fee48e6507ac447ee809299fe9606a2',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0230c1436a39080dab151858285fa0ff5f442da',
-            schema: 'dirs'
-          }
-        ]
-      },
-      '955951e0-4e4c-11e8-86df-89ea5dd390c7': {
-        id: '955951e0-4e4c-11e8-86df-89ea5dd390c7',
-        name: 'demo',
-        content: [
-          {
-            id: '8b137891791fe96927ad78e64b0aad7bded08bdc',
-            schema: 'files'
-          },
-          {
-            id: 'b341e88729a6e9d60bfc15de13bd9135a49e9cc2',
-            schema: 'files'
-          },
-          {
-            id: '8471ce881fee48e6507ac447ee809299fe9606a2',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0230c1436a39080dab151858285fa0ff5f442da',
-            schema: 'dirs'
-          }
-        ]
-      },
-      'b67a9cd0-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b67a9cd0-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'payment-cards',
-        content: [
-          {
-            id: 'b6932de0-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          },
-          {
-            id: 'b693ca20-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          }
-        ]
-      },
-      'b67aeaf0-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b67aeaf0-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'utils',
-        content: [
-          {
-            id: 'b6915920-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          },
-          {
-            id: 'b691f560-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          }
-        ]
-      },
-      'b6639260-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b6639260-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'demo',
-        content: [
-          {
-            id: 'b6796450-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          },
-          {
-            id: 'b67a0090-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'files'
-          },
-          {
-            id: 'b67a9cd0-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'dirs'
-          },
-          {
-            id: 'b67aeaf0-4e4c-11e8-b94e-8d76aa447f53',
-            schema: 'dirs'
-          }
-        ]
-      },
-      'e0f87690-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0f87690-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'account',
-        content: [
-          {
-            id: 'e10d5e20-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e0f9af10-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0f9af10-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'foo',
-        content: [
-          {
-            id: 'e12e53a0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e14d2640-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e14d2640-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'very-very-nested',
-        content: [
-          {
-            id: 'e162aa10-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e1634650-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e131fd20-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e131fd20-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'very-nested',
-        content: [
-          {
-            id: 'e14d2640-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          }
-        ]
-      },
-      'e0fb0ea0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fb0ea0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'nested',
-        content: [
-          {
-            id: 'e131fd20-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          }
-        ]
-      },
-      'e0fb5cc0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fb5cc0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'nojs',
-        content: [
-          {
-            id: 'e141b490-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e14229c0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e0c30eb0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0c30eb0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'snippets',
-        content: [
-          {
-            id: 'e0f87690-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0f8c4b0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e0f960f0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e0f9af10-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0fa2440-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e0fa9970-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e0fb0ea0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0fb5cc0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          },
-          {
-            id: 'e0fbd1f0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e0fc4720-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e19ea1a0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e19ea1a0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'payment-cards',
-        content: [
-          {
-            id: 'e1b4c1b0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e1b536e0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e19f16d0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e19f16d0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'utils',
-        content: [
-          {
-            id: 'e1b29ed0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e1b31400-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          }
-        ]
-      },
-      'e184ff20-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e184ff20-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'demo',
-        content: [
-          {
-            id: 'e19db740-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e19e5380-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'files'
-          },
-          {
-            id: 'e19ea1a0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
-          },
-          {
-            id: 'e19f16d0-4e50-11e8-915d-83e9ca8f32cf',
-            schema: 'dirs'
           }
         ]
       }
@@ -1094,6 +677,148 @@ const state = {
         name: 'log.js',
         content: 'Cg==\n'
       },
+      '16994d42797d8187cfd95155cde3ee87f6ca1266': {
+        id: '16994d42797d8187cfd95155cde3ee87f6ca1266',
+        name: 'css-layout.js',
+        content:
+          'Ly8gdGlueSBDU1MgbGF5b3V0ICJkZWJ1Z2dlciIKLy8gZnJvbSBodHRwczov\nL2dpc3QuZ2l0aHViLmNvbS9hZGR5b3NtYW5pL2ZkMzk5OWVhN2ZjZTI0Mjc1\nNmIxCi8vIHB1dHMgcmFuZG9tIGNvbG9yIGJvcmRlciBhcm91bmQgZWFjaCBl\nbGVtZW50Ci8qIGdsb2JhbCAkJCAqLwovKiBqc2hpbnQgLVcwMTYgKi8KW10u\nZm9yRWFjaC5jYWxsKCQkKCcqJyksCiAgZnVuY3Rpb24gKGEpIHsKICAgIGEu\nc3R5bGUub3V0bGluZSA9ICcxcHggc29saWQgIycgKyAofn4oTWF0aC5yYW5k\nb20oKSAqICgxIDw8IDI0KSkpLnRvU3RyaW5nKDE2KTsKICB9KTsK\n'
+      },
+      '01ec30fd30589cd3f80f8e2f77c4f8fd1c590f7b': {
+        id: '01ec30fd30589cd3f80f8e2f77c4f8fd1c590f7b',
+        name: 'first-paint-remote.js',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      '7b8e4ed0-505b-11e8-b126-99f9ad4fe745': {
+        id: '7b8e4ed0-505b-11e8-b126-99f9ad4fe745',
+        name: 'bahmutov/code-snippets/first-paint-remote.js 2',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      'e0c6a180-505b-11e8-b126-99f9ad4fe745': {
+        id: 'e0c6a180-505b-11e8-b126-99f9ad4fe745',
+        name: 'bahmutov/code-snippets/first-paint-remote.js 2',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      '627d43f0-505c-11e8-b126-99f9ad4fe745': {
+        id: '627d43f0-505c-11e8-b126-99f9ad4fe745',
+        name:
+          'https://github.com/bahmutov/code-snippets/blob/master/first-paint-remote.js',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      '672811e0-505d-11e8-b0ff-417beb47e78d': {
+        id: '672811e0-505d-11e8-b0ff-417beb47e78d',
+        name: 'first-paint-remote.js',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      '91d86a20-505d-11e8-b0ff-417beb47e78d': {
+        id: '91d86a20-505d-11e8-b0ff-417beb47e78d',
+        name: 'first-paint-remote.js',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      'b0958650-505d-11e8-93ef-03dd69bebf80': {
+        id: 'b0958650-505d-11e8-93ef-03dd69bebf80',
+        name: 'first-paint-remote.js',
+        content:
+          'KGZ1bmN0aW9uIGZpcnN0UGFpbnRSZW1vdGUoKSB7CiAgLy8gZm9ybSByYXdH\naXQgcHJveHkgdXJsCiAgdmFyIGdoVXJsID0gJ2JhaG11dG92L2NvZGUtc25p\ncHBldHMvbWFzdGVyL2ZpcnN0LXBhaW50LmpzJzsKICB2YXIgcmF3VXJsID0g\nJ2h0dHBzOi8vcmF3Z2l0LmNvbS8nICsgZ2hVcmw7CiAgLy8gZG93bmxvYWQg\nYW5kIHJ1biB0aGUgc2NyaXB0CiAgdmFyIGhlYWQgPSBkb2N1bWVudC5nZXRF\nbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdOwogIHZhciBzY3JpcHQgPSBk\nb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICBzY3JpcHQudHlw\nZSA9ICd0ZXh0L2phdmFzY3JpcHQnOwogIHNjcmlwdC5zcmMgPSByYXdVcmw7\nCiAgaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOwp9KCkpOwo=\n'
+      },
+      'e7ff02b0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7ff02b0-505d-11e8-93ef-03dd69bebf80',
+        name: 'register-autofill.js',
+        content: 'Y29uc29sZS5sb2coJ1J1bm5pbmcgcmVnaXN0ZXIgYXV0b2ZpbGwnKTsK\n'
+      },
+      'e7e00900-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7e00900-505d-11e8-93ef-03dd69bebf80',
+        name: 'barrel-roll.png',
+        content: ''
+      },
+      'e7e6bfc0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7e6bfc0-505d-11e8-93ef-03dd69bebf80',
+        name: 'checkout-autofill.ts',
+        content:
+          'Y29uc29sZS5sb2coJ1J1bm5pbmcgY2hlY2tvdXQgYXV0b2ZpbGwnKTsKCmNv\nbnN0IHRoaXNTaG91bGROb3RCZUxlYWtlZFRvVGhlR2xvYmFsID0gdHJ1ZTsK\n'
+      },
+      'e800fe80-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e800fe80-505d-11e8-93ef-03dd69bebf80',
+        name: 'bar.js',
+        content: 'YWxlcnQoJ1J1bm5pbmcgYmFyJyk7Cg==\n'
+      },
+      'e7e86d70-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7e86d70-505d-11e8-93ef-03dd69bebf80',
+        name: 'log-query.js',
+        content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgcXVlcnknKTsK\n'
+      },
+      'e7ebc8d0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7ebc8d0-505d-11e8-93ef-03dd69bebf80',
+        name: 'log-store.js',
+        content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgc3RvcmUnKTsK\n'
+      },
+      'e82ffdc0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e82ffdc0-505d-11e8-93ef-03dd69bebf80',
+        name: 'nested.js',
+        content: 'Ly8gbmVzdGVkLmpzCmNvbnNvbGUubG9nKCduZXN0ZWQuanMnKTsK\n'
+      },
+      'e82eec50-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e82eec50-505d-11e8-93ef-03dd69bebf80',
+        name: 'nested.md',
+        content: 'IyBOZXN0ZWQgbWFya2Rvd24K\n'
+      },
+      'e80a7460-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e80a7460-505d-11e8-93ef-03dd69bebf80',
+        name: 'an-image.png',
+        content: ''
+      },
+      'e80ff2a0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e80ff2a0-505d-11e8-93ef-03dd69bebf80',
+        name: 'some-markdown.md',
+        content: ''
+      },
+      'e7fcdfd0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7fcdfd0-505d-11e8-93ef-03dd69bebf80',
+        name: 'search-autofill.js',
+        content: 'Y29uc29sZS5sb2coJ1J1bm5pbmcgc2VhcmNoIGF1dG9maWxsJyk7Cg==\n'
+      },
+      'e7fd06e0-505d-11e8-93ef-03dd69bebf80': {
+        id: 'e7fd06e0-505d-11e8-93ef-03dd69bebf80',
+        name: 'source-autofill.js',
+        content:
+          'dmFyIHNldElucHV0ID0gKGlucHV0LCB2YWx1ZSkgPT4gewogICAgdmFyIG5h\ndGl2ZUlucHV0VmFsdWVTZXR0ZXIgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlE\nZXNjcmlwdG9yKHdpbmRvdy5IVE1MSW5wdXRFbGVtZW50LnByb3RvdHlwZSwg\nInZhbHVlIikuc2V0OwpuYXRpdmVJbnB1dFZhbHVlU2V0dGVyLmNhbGwoaW5w\ndXQsIHZhbHVlKTsKdmFyIGV2MiA9IG5ldyBFdmVudCgnaW5wdXQnLCB7IGJ1\nYmJsZXM6IHRydWV9KTsKaW5wdXQuZGlzcGF0Y2hFdmVudChldjIpOwp9OwoK\nc2V0SW5wdXQoJCgnW25hbWU9Im5hbWUiXScpLCAnVHJhaW5saW5lIFdlYicp\nCnNldElucHV0KCQoJ1tuYW1lPSJhcGkiXScpLCAnaHR0cHM6Ly9hcGkuZ2l0\naHViLmNvbScpCnNldElucHV0KCQoJ1tuYW1lPSJhY2Nlc3NUb2tlbiJdJyks\nICcxMGIxYjRmMDdmNjAyZjljNjE3YzlhNGFkMjQ1ZjQ1NjA1YzAyODIwJykK\nLy9zZXRJbnB1dCgkKCdbbmFtZT0iYWNjZXNzVG9rZW4iXScpLCAnMTBiMWI0\nZjA3ZjYwMmY5YzYxN2M5YTRhZDI0NWY0NTYwNWMwMjgyMEJVRycpCnNldElu\ncHV0KCQoJ1tuYW1lPSJvd25lciJdJyksICdyaWNoYXJkc2NhcnJvdHQnKQpz\nZXRJbnB1dCgkKCdbbmFtZT0icmVwbyJdJyksICd0ZXN0LXNuaXBwZXRzJykK\nc2V0SW5wdXQoJCgnW25hbWU9InBhdGgiXScpLCAnc25pcHBldHMnKQo=\n'
+      },
+      '94689570-505e-11e8-93ef-03dd69bebf80': {
+        id: '94689570-505e-11e8-93ef-03dd69bebf80',
+        name: 'empty.js',
+        content: 'Cg==\n'
+      },
+      '94825f00-505e-11e8-93ef-03dd69bebf80': {
+        id: '94825f00-505e-11e8-93ef-03dd69bebf80',
+        name: 'passenger-details-autofill.js',
+        content:
+          'Y29uc29sZS5sb2coJ2F1dG9maWxsIHBhc3NlbmdlciBkZXRhaWxzIDEyMycp\nOwo=\n'
+      },
+      '94af1450-505e-11e8-93ef-03dd69bebf80': {
+        id: '94af1450-505e-11e8-93ef-03dd69bebf80',
+        name: 'log.js',
+        content: 'Cg==\n'
+      },
+      '94af1451-505e-11e8-93ef-03dd69bebf80': {
+        id: '94af1451-505e-11e8-93ef-03dd69bebf80',
+        name: 'visa-autofill.js',
+        content: 'Y29uc29sZS5sb2coJ3Zpc2EgYXV0b2ZpbGwgMTIzJyk7Cg==\n'
+      },
+      '94ae9f20-505e-11e8-93ef-03dd69bebf80': {
+        id: '94ae9f20-505e-11e8-93ef-03dd69bebf80',
+        name: 'log-query.js',
+        content: 'Y29uc29sZS5sb2coJ2xvZyBxdWVyeSAxMjMnKTsK\n'
+      },
+      '94ae5100-505e-11e8-93ef-03dd69bebf80': {
+        id: '94ae5100-505e-11e8-93ef-03dd69bebf80',
+        name: 'log.js',
+        content: 'Cg==\n'
+      },
       b341e88729a6e9d60bfc15de13bd9135a49e9cc2: {
         id: 'b341e88729a6e9d60bfc15de13bd9135a49e9cc2',
         name: 'passenger-details-autofill.js',
@@ -1109,305 +834,112 @@ const state = {
         id: '8898fa990b5c1ecfb9fa3caed946365c8d3f41d0',
         name: 'log-query.js',
         content: 'Y29uc29sZS5sb2coJ2xvZyBxdWVyeSAxMjMnKTsK\n'
-      },
-      'b6796450-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b6796450-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'empty.js',
-        content: 'Cg==\n'
-      },
-      'b67a0090-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b67a0090-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'passenger-details-autofill.js',
-        content:
-          'Y29uc29sZS5sb2coJ2F1dG9maWxsIHBhc3NlbmdlciBkZXRhaWxzIDEyMycp\nOwo=\n'
-      },
-      'b6932de0-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b6932de0-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'log.js',
-        content: 'Cg==\n'
-      },
-      'b693ca20-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b693ca20-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'visa-autofill.js',
-        content: 'Y29uc29sZS5sb2coJ3Zpc2EgYXV0b2ZpbGwgMTIzJyk7Cg==\n'
-      },
-      'b6915920-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b6915920-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'log-query.js',
-        content: 'Y29uc29sZS5sb2coJ2xvZyBxdWVyeSAxMjMnKTsK\n'
-      },
-      'b691f560-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'b691f560-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'log.js',
-        content: 'Cg==\n'
-      },
-      'dc750e20-4e4c-11e8-b94e-8d76aa447f53': {
-        id: 'dc750e20-4e4c-11e8-b94e-8d76aa447f53',
-        name: 'empty.js',
-        content: 'Cg==\n'
-      },
-      '3c5fa6b0-4e4d-11e8-aefc-f979f9aaaafb': {
-        id: '3c5fa6b0-4e4d-11e8-aefc-f979f9aaaafb',
-        name: 'empty.js',
-        content: 'Cg==\n'
-      },
-      undefined: {
-        '0': {
-          id: '41c04c90-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'account',
-          content: [
-            {
-              id: '41d3fba0-4e4d-11e8-aefc-f979f9aaaafb',
-              name: 'register-autofill.js',
-              content:
-                'Y29uc29sZS5sb2coJ1J1bm5pbmcgcmVnaXN0ZXIgYXV0b2ZpbGwnKTsK\n'
-            }
-          ]
-        },
-        '1': {
-          id: '41c0c1c0-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'barrel-roll.png',
-          content: ''
-        },
-        '2': {
-          id: '41c10fe0-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'checkout-autofill.ts',
-          content:
-            'Y29uc29sZS5sb2coJ1J1bm5pbmcgY2hlY2tvdXQgYXV0b2ZpbGwnKTsKCmNv\nbnN0IHRoaXNTaG91bGROb3RCZUxlYWtlZFRvVGhlR2xvYmFsID0gdHJ1ZTsK\n'
-        },
-        '3': {
-          id: '41c18510-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'foo',
-          content: [
-            {
-              id: '41f0f980-4e4d-11e8-aefc-f979f9aaaafb',
-              name: 'bar.js',
-              content: 'YWxlcnQoJ1J1bm5pbmcgYmFyJyk7Cg==\n'
-            }
-          ]
-        },
-        '4': {
-          id: '41c1fa40-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'log-query.js',
-          content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgcXVlcnknKTsK\n'
-        },
-        '5': {
-          id: '41c29680-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'log-store.js',
-          content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgc3RvcmUnKTsK\n'
-        },
-        '6': {
-          id: '41c2e4a0-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'nested',
-          content: [
-            {
-              id: '41f69ed0-4e4d-11e8-aefc-f979f9aaaafb',
-              name: 'very-nested',
-              content: [
-                {
-                  id: '42121610-4e4d-11e8-aefc-f979f9aaaafb',
-                  name: 'very-very-nested',
-                  content: [
-                    {
-                      id: '4229bcc0-4e4d-11e8-aefc-f979f9aaaafb',
-                      name: 'nested.js',
-                      content:
-                        'Ly8gbmVzdGVkLmpzCmNvbnNvbGUubG9nKCduZXN0ZWQuanMnKTsK\n'
-                    },
-                    {
-                      id: '422a8010-4e4d-11e8-aefc-f979f9aaaafb',
-                      name: 'nested.md',
-                      content: 'IyBOZXN0ZWQgbWFya2Rvd24K\n'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        '7': {
-          id: '41c359d0-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'nojs',
-          content: [
-            {
-              id: '41fdcac0-4e4d-11e8-aefc-f979f9aaaafb',
-              name: 'an-image.png',
-              content: ''
-            },
-            {
-              id: '41fe18e0-4e4d-11e8-aefc-f979f9aaaafb',
-              name: 'some-markdown.md',
-              content: ''
-            }
-          ]
-        },
-        '8': {
-          id: '41c3cf00-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'search-autofill.js',
-          content: 'Y29uc29sZS5sb2coJ1J1bm5pbmcgc2VhcmNoIGF1dG9maWxsJyk7Cg==\n'
-        },
-        '9': {
-          id: '41c46b40-4e4d-11e8-aefc-f979f9aaaafb',
-          name: 'source-autofill.js',
-          content:
-            'dmFyIHNldElucHV0ID0gKGlucHV0LCB2YWx1ZSkgPT4gewogICAgdmFyIG5h\ndGl2ZUlucHV0VmFsdWVTZXR0ZXIgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlE\nZXNjcmlwdG9yKHdpbmRvdy5IVE1MSW5wdXRFbGVtZW50LnByb3RvdHlwZSwg\nInZhbHVlIikuc2V0OwpuYXRpdmVJbnB1dFZhbHVlU2V0dGVyLmNhbGwoaW5w\ndXQsIHZhbHVlKTsKdmFyIGV2MiA9IG5ldyBFdmVudCgnaW5wdXQnLCB7IGJ1\nYmJsZXM6IHRydWV9KTsKaW5wdXQuZGlzcGF0Y2hFdmVudChldjIpOwp9OwoK\nc2V0SW5wdXQoJCgnW25hbWU9Im5hbWUiXScpLCAnVHJhaW5saW5lIFdlYicp\nCnNldElucHV0KCQoJ1tuYW1lPSJhcGkiXScpLCAnaHR0cHM6Ly9hcGkuZ2l0\naHViLmNvbScpCnNldElucHV0KCQoJ1tuYW1lPSJhY2Nlc3NUb2tlbiJdJyks\nICcxMGIxYjRmMDdmNjAyZjljNjE3YzlhNGFkMjQ1ZjQ1NjA1YzAyODIwJykK\nLy9zZXRJbnB1dCgkKCdbbmFtZT0iYWNjZXNzVG9rZW4iXScpLCAnMTBiMWI0\nZjA3ZjYwMmY5YzYxN2M5YTRhZDI0NWY0NTYwNWMwMjgyMEJVRycpCnNldElu\ncHV0KCQoJ1tuYW1lPSJvd25lciJdJyksICdyaWNoYXJkc2NhcnJvdHQnKQpz\nZXRJbnB1dCgkKCdbbmFtZT0icmVwbyJdJyksICd0ZXN0LXNuaXBwZXRzJykK\nc2V0SW5wdXQoJCgnW25hbWU9InBhdGgiXScpLCAnc25pcHBldHMnKQo=\n'
-        }
-      },
-      '78c70820-4e50-11e8-9d3f-8f88e766d3de': {
-        id: '78c70820-4e50-11e8-9d3f-8f88e766d3de',
-        name: 'empty.js',
-        content: 'Cg==\n'
-      },
-      'e10d5e20-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e10d5e20-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'register-autofill.js',
-        content: 'Y29uc29sZS5sb2coJ1J1bm5pbmcgcmVnaXN0ZXIgYXV0b2ZpbGwnKTsK\n'
-      },
-      'e0f8c4b0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0f8c4b0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'barrel-roll.png',
-        content: ''
-      },
-      'e0f960f0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0f960f0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'checkout-autofill.ts',
-        content:
-          'Y29uc29sZS5sb2coJ1J1bm5pbmcgY2hlY2tvdXQgYXV0b2ZpbGwnKTsKCmNv\nbnN0IHRoaXNTaG91bGROb3RCZUxlYWtlZFRvVGhlR2xvYmFsID0gdHJ1ZTsK\n'
-      },
-      'e12e53a0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e12e53a0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'bar.js',
-        content: 'YWxlcnQoJ1J1bm5pbmcgYmFyJyk7Cg==\n'
-      },
-      'e0fa2440-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fa2440-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'log-query.js',
-        content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgcXVlcnknKTsK\n'
-      },
-      'e0fa9970-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fa9970-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'log-store.js',
-        content: 'Y29uc29sZS5sb2coJ0xvZ2dpbmcgc3RvcmUnKTsK\n'
-      },
-      'e162aa10-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e162aa10-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'nested.js',
-        content: 'Ly8gbmVzdGVkLmpzCmNvbnNvbGUubG9nKCduZXN0ZWQuanMnKTsK\n'
-      },
-      'e1634650-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e1634650-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'nested.md',
-        content: 'IyBOZXN0ZWQgbWFya2Rvd24K\n'
-      },
-      'e141b490-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e141b490-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'an-image.png',
-        content: ''
-      },
-      'e14229c0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e14229c0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'some-markdown.md',
-        content: ''
-      },
-      'e0fbd1f0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fbd1f0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'search-autofill.js',
-        content: 'Y29uc29sZS5sb2coJ1J1bm5pbmcgc2VhcmNoIGF1dG9maWxsJyk7Cg==\n'
-      },
-      'e0fc4720-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e0fc4720-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'source-autofill.js',
-        content:
-          'dmFyIHNldElucHV0ID0gKGlucHV0LCB2YWx1ZSkgPT4gewogICAgdmFyIG5h\ndGl2ZUlucHV0VmFsdWVTZXR0ZXIgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlE\nZXNjcmlwdG9yKHdpbmRvdy5IVE1MSW5wdXRFbGVtZW50LnByb3RvdHlwZSwg\nInZhbHVlIikuc2V0OwpuYXRpdmVJbnB1dFZhbHVlU2V0dGVyLmNhbGwoaW5w\ndXQsIHZhbHVlKTsKdmFyIGV2MiA9IG5ldyBFdmVudCgnaW5wdXQnLCB7IGJ1\nYmJsZXM6IHRydWV9KTsKaW5wdXQuZGlzcGF0Y2hFdmVudChldjIpOwp9OwoK\nc2V0SW5wdXQoJCgnW25hbWU9Im5hbWUiXScpLCAnVHJhaW5saW5lIFdlYicp\nCnNldElucHV0KCQoJ1tuYW1lPSJhcGkiXScpLCAnaHR0cHM6Ly9hcGkuZ2l0\naHViLmNvbScpCnNldElucHV0KCQoJ1tuYW1lPSJhY2Nlc3NUb2tlbiJdJyks\nICcxMGIxYjRmMDdmNjAyZjljNjE3YzlhNGFkMjQ1ZjQ1NjA1YzAyODIwJykK\nLy9zZXRJbnB1dCgkKCdbbmFtZT0iYWNjZXNzVG9rZW4iXScpLCAnMTBiMWI0\nZjA3ZjYwMmY5YzYxN2M5YTRhZDI0NWY0NTYwNWMwMjgyMEJVRycpCnNldElu\ncHV0KCQoJ1tuYW1lPSJvd25lciJdJyksICdyaWNoYXJkc2NhcnJvdHQnKQpz\nZXRJbnB1dCgkKCdbbmFtZT0icmVwbyJdJyksICd0ZXN0LXNuaXBwZXRzJykK\nc2V0SW5wdXQoJCgnW25hbWU9InBhdGgiXScpLCAnc25pcHBldHMnKQo=\n'
-      },
-      'e19db740-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e19db740-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'empty.js',
-        content: 'Cg==\n'
-      },
-      'e19e5380-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e19e5380-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'passenger-details-autofill.js',
-        content:
-          'Y29uc29sZS5sb2coJ2F1dG9maWxsIHBhc3NlbmdlciBkZXRhaWxzIDEyMycp\nOwo=\n'
-      },
-      'e1b4c1b0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e1b4c1b0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'log.js',
-        content: 'Cg==\n'
-      },
-      'e1b536e0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e1b536e0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'visa-autofill.js',
-        content: 'Y29uc29sZS5sb2coJ3Zpc2EgYXV0b2ZpbGwgMTIzJyk7Cg==\n'
-      },
-      'e1b29ed0-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e1b29ed0-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'log-query.js',
-        content: 'Y29uc29sZS5sb2coJ2xvZyBxdWVyeSAxMjMnKTsK\n'
-      },
-      'e1b31400-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e1b31400-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'log.js',
-        content: 'Cg==\n'
-      },
-      'e24b5c60-4e50-11e8-915d-83e9ca8f32cf': {
-        id: 'e24b5c60-4e50-11e8-915d-83e9ca8f32cf',
-        name: 'empty.js',
-        content: 'Cg==\n'
       }
     }
   },
   sources: {
     meta: {
-      'fcbe26c0-4d76-11e8-b555-8b61f2cc806d': {
+      '0b45edc0-5053-11e8-8463-1398ef7a3c84': {
         status: 'SUCCESS',
-        receivedAt: 1525203422713,
+        receivedAt: 1525520400648
+      },
+      '1afbb010-5053-11e8-8463-1398ef7a3c84': {
+        status: 'SUCCESS',
+        receivedAt: 1525520402971
+      },
+      'fa77fd50-5055-11e8-bea4-0197c11e9b6d': {
+        status: 'CREATING'
+      },
+      '16fe1540-5056-11e8-afef-b1ee829b3cd8': {
+        status: 'CREATING'
+      },
+      '9857ae20-5057-11e8-b9a6-739adda71566': {
+        status: 'SUCCESS',
+        receivedAt: 1525519785772,
         deleted: true
       },
-      '8d06b2b0-4d7c-11e8-874b-9dd2db0d9840': {
+      '9e9853c0-5057-11e8-b9a6-739adda71566': {
         status: 'SUCCESS',
-        receivedAt: 1525205816591,
+        receivedAt: 1525519828479,
         deleted: true
       },
-      'a1b16b50-4d7d-11e8-a155-1772a868f659': {
+      'c5967970-5057-11e8-b9a6-739adda71566': {
         status: 'SUCCESS',
-        receivedAt: 1525206270717,
+        receivedAt: 1525520405554
+      },
+      'd94f2660-5057-11e8-b9a6-739adda71566': {
+        status: 'SUCCESS',
+        receivedAt: 1525520407594
+      },
+      '1114f390-5058-11e8-b9a6-739adda71566': {
+        status: 'SUCCESS',
+        receivedAt: 1525520016458,
         deleted: true
       },
-      'e84ef6e0-4d7d-11e8-aed5-e572e0a14711': {
+      '7d0f29d0-5058-11e8-b9a6-739adda71566': {
         status: 'SUCCESS',
-        receivedAt: 1525206407556,
+        receivedAt: 1525520409432,
+        deleted: false
+      },
+      '6d3d73b0-505b-11e8-ac98-7745f6353963': {
+        status: 'SUCCESS',
+        receivedAt: 1525521448339,
         deleted: true
       },
-      '268f3e60-4d7e-11e8-aced-3791003a1c93': {
+      'd47789d0-505b-11e8-ac98-7745f6353963': {
         status: 'SUCCESS',
-        receivedAt: 1525206511648,
+        receivedAt: 1525521618232,
         deleted: true
       },
-      '8380bb30-4d7e-11e8-aced-3791003a1c93': {
+      '5bf77f00-505c-11e8-ac98-7745f6353963': {
         status: 'SUCCESS',
-        receivedAt: 1525296992400
-      },
-      '2f38b780-4e4b-11e8-bd82-c775a5880b5f': {
-        status: 'SUCCESS',
-        receivedAt: 1525296992735
-      },
-      'd71f8bd0-4e4c-11e8-be56-6d520015e65e': {
-        status: 'SUCCESS',
-        receivedAt: 1525296993718,
+        receivedAt: 1525521836106,
         deleted: true
+      },
+      '606fa430-505d-11e8-814c-e97f2e1d6b4b': {
+        status: 'SUCCESS',
+        receivedAt: 1525522272767,
+        deleted: true
+      },
+      '703a4e10-505d-11e8-814c-e97f2e1d6b4b': {
+        status: 'SUCCESS',
+        receivedAt: 1525522344386
+      },
+      'a40fce40-505d-11e8-8ecf-9d99d3539c4f': {
+        status: 'SUCCESS',
+        receivedAt: 1525522395966
+      },
+      'df222e60-505d-11e8-8ecf-9d99d3539c4f': {
+        status: 'SUCCESS',
+        receivedAt: 1525522489247
+      },
+      '84715d50-505e-11e8-8ecf-9d99d3539c4f': {
+        status: 'SUCCESS',
+        receivedAt: 1525522778647
+      },
+      'f98aef20-505e-11e8-879b-5570db5b57ed': {
+        status: 'SUCCESS',
+        receivedAt: 1525522959172
       }
     },
     data: [
-      'fcbe26c0-4d76-11e8-b555-8b61f2cc806d',
-      '8d06b2b0-4d7c-11e8-874b-9dd2db0d9840',
-      'a1b16b50-4d7d-11e8-a155-1772a868f659',
-      'e84ef6e0-4d7d-11e8-aed5-e572e0a14711',
-      '268f3e60-4d7e-11e8-aced-3791003a1c93',
-      '8380bb30-4d7e-11e8-aced-3791003a1c93',
-      '2f38b780-4e4b-11e8-bd82-c775a5880b5f',
-      'd71f8bd0-4e4c-11e8-be56-6d520015e65e'
+      '0b45edc0-5053-11e8-8463-1398ef7a3c84',
+      '1afbb010-5053-11e8-8463-1398ef7a3c84',
+      '9857ae20-5057-11e8-b9a6-739adda71566',
+      '9e9853c0-5057-11e8-b9a6-739adda71566',
+      'c5967970-5057-11e8-b9a6-739adda71566',
+      'd94f2660-5057-11e8-b9a6-739adda71566',
+      '1114f390-5058-11e8-b9a6-739adda71566',
+      '7d0f29d0-5058-11e8-b9a6-739adda71566',
+      '6d3d73b0-505b-11e8-ac98-7745f6353963',
+      'd47789d0-505b-11e8-ac98-7745f6353963',
+      '5bf77f00-505c-11e8-ac98-7745f6353963',
+      '606fa430-505d-11e8-814c-e97f2e1d6b4b',
+      '703a4e10-505d-11e8-814c-e97f2e1d6b4b',
+      'a40fce40-505d-11e8-8ecf-9d99d3539c4f',
+      'df222e60-505d-11e8-8ecf-9d99d3539c4f',
+      '84715d50-505e-11e8-8ecf-9d99d3539c4f',
+      'f98aef20-505e-11e8-879b-5570db5b57ed'
     ]
   },
   form: {},
@@ -1415,25 +947,16 @@ const state = {
     snackbar: {
       type: '',
       payload: {
-        name: 'Demo (file)',
+        name: 'Demo 2',
         url:
-          'https://github.com/richardscarrott/test-snippets/blob/master/demo/empty.js',
-        accessToken: '9f04ec0c793d4445635b73e95362d3cfd1ecabd4',
-        id: 'd71f8bd0-4e4c-11e8-be56-6d520015e65e',
-        content: {
-          id: 'e24b5c60-4e50-11e8-915d-83e9ca8f32cf',
-          name: 'empty.js',
-          content: 'Cg==\n'
-        },
-        meta: {
-          status: 'SUCCESS',
-          receivedAt: 1525296993718
-        }
+          'https://github.com/richardscarrott/test-snippets/tree/master/demo',
+        accessToken: '2bdbd8d2c6ac9198936cdfd01899848f8d61a7a1',
+        id: 'f98aef20-505e-11e8-879b-5570db5b57ed'
       }
     }
   },
   _persist: {
-    version: 1,
+    version: 2,
     rehydrated: true
   }
 };

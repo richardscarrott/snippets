@@ -8,7 +8,6 @@ import { Router } from 'react-router-dom';
 import createHistory from 'history/createMemoryHistory';
 import { PersistGate } from 'redux-persist/integration/react';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import { filesSelector } from '../redux/selectors/sources/sources';
 
 const rootElement = document.getElementById('root');
 
@@ -41,8 +40,6 @@ chrome.runtime.getBackgroundPage(({ getStore }) => {
     throw new Error('Expected global `getStore` defined by background page.');
   }
   const [store, persistor] = getStore();
-  console.log(filesSelector(store.getState()));
-
   render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
