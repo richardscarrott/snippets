@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Add JavaScript snippets to your context menu",
   "homepage_url": "http://github.com/richardscarrott/snippets",
-  "omnibox": { "keyword": "sn" },
+  "omnibox": { "keyword": "s" },
   "icons": {
     "16": "icons/final.png",
     "48": "icons/final.png",
