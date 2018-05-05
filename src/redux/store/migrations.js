@@ -24,9 +24,10 @@ export const migrations = {
         ).reduce((sources, [id, source]) => {
           sources[id] = {
             ...source,
-            // Now Source extend Dir we need to reparent the dir to avoid unnecesary nesting
-            // e.g. source (MySnippets) -> dir (snippets) -> file (snippet.js)
-            // becomes source (MySnippets) -> file (snippet.js)
+            // Now Source extends Dir we need to reparent the dir content to avoid
+            // unnecessary nesting.
+            // e.g. `source (MySnippets) -> dir (snippets) -> file (snippet.js)`
+            // becomes `source (MySnippets) -> file (snippet.js)`
             content:
               source.content.schema === 'dirs'
                 ? state.entities.dirs[source.content.id].content
