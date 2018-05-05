@@ -13,7 +13,7 @@ const middleware = [sagaMiddleware];
 const persistedRootReducer = persistReducer(
   {
     key: 'root',
-    version: 1,
+    version: 2,
     storage: chromeLocalStorage,
     migrate: createMigrate(migrations, { debug: false })
   },
