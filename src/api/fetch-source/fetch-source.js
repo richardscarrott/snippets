@@ -16,7 +16,6 @@ const isDir = content => Array.isArray(content.content);
 
 const fetchContents = async (
   name,
-  id,
   api,
   accessToken,
   owner,
@@ -40,13 +39,12 @@ const fetchContents = async (
   const contents = await response.json();
   if (Array.isArray(contents)) {
     return {
-      id,
+      id: uuid(),
       name,
       content: await Promise.all(
         contents.map(content =>
           fetchContents(
             content.name,
-            content.sha,
             api,
             accessToken,
             owner,
@@ -59,7 +57,7 @@ const fetchContents = async (
     };
   } else if (contents.type === 'file') {
     return {
-      id: contents.sha,
+      id: uuid(),
       name: contents.name,
       content: contents.content
     };
@@ -87,10 +85,8 @@ export const sourceListSchema = new schema.Array(sourceSchema);
 const fetchSource = async request => {
   const { api, owner, repo, path, branch } = parseGitHubUrl(request.url);
   const content = await fetchContents(
-    request.name,
-    // NOTE: Github contents api doesn't return the `sha` of
-    // dir at `path`, so having to generate a unique id in client.
-    uuid(),
+    // NOTE: We pass in the path as the name however the content is later reparented so is largely irrelevant
+    path,
     api,
     request.accessToken,
     owner,
