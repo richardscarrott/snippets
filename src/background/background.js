@@ -98,7 +98,7 @@ const render = state => {
       const sources = sourcesSelector(state);
       return Promise.all(
         sources.map(source =>
-          renderContentContextMenu(source.content, TOP_LEVEL_CONTEXT_MENU_ID)
+          renderContentContextMenu(source, TOP_LEVEL_CONTEXT_MENU_ID)
         )
       ).then(() => sources.length);
     })

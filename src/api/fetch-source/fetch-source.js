@@ -12,6 +12,8 @@ const endpoint = (api, owner, repo, path, branch) => {
   return new URL(`${fullPath}?ref=${branch}`, api);
 };
 
+const isDir = content => Array.isArray(content.content);
+
 const fetchContents = async (
   name,
   id,
@@ -78,13 +80,17 @@ dirSchema.define({
   content: [contentSchema]
 });
 const sourceSchema = new schema.Entity('sources', {
+  content: [contentSchema]
+});
+const legacySourceSchema = new schema.Entity('sources', {
   content: contentSchema
 });
 export const sourceListSchema = new schema.Array(sourceSchema);
+export const legacyListSchema = new schema.Array(legacySourceSchema);
 
 const fetchSource = async request => {
   const { api, owner, repo, path, branch } = parseGitHubUrl(request.url);
-  const contents = await fetchContents(
+  const content = await fetchContents(
     request.name,
     // NOTE: Github contents api doesn't return the `sha` of
     // dir at `path`, so having to generate a unique id in client.
@@ -98,7 +104,10 @@ const fetchSource = async request => {
   );
   const source = {
     ...request,
-    content: contents
+    // Source extends Dir (if only I had typescript to document this 😞) so
+    // the source itself is used to represent the top level directory @ `path`
+    // which is why we reparent the dir contents to the source.
+    content: isDir(content) ? content.content : [content]
   };
   const normalizedSource = normalize([source], sourceListSchema);
   return normalizedSource;
