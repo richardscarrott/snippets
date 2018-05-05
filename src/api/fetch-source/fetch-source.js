@@ -82,11 +82,7 @@ dirSchema.define({
 const sourceSchema = new schema.Entity('sources', {
   content: [contentSchema]
 });
-const legacySourceSchema = new schema.Entity('sources', {
-  content: contentSchema
-});
 export const sourceListSchema = new schema.Array(sourceSchema);
-export const legacyListSchema = new schema.Array(legacySourceSchema);
 
 const fetchSource = async request => {
   const { api, owner, repo, path, branch } = parseGitHubUrl(request.url);
