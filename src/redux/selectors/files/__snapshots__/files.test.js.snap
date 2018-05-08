@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filePathsSelector works 1`] = `
+Array [
+  Object {
+    "id": "14670f80-52ef-11e8-9986-dd586b391786",
+    "path": "Test/account/register-autofill.js",
+  },
+  Object {
+    "id": "14477990-52ef-11e8-9986-dd586b391786",
+    "path": "Test/barrel-roll.png",
+  },
+  Object {
+    "id": "144e5760-52ef-11e8-9986-dd586b391786",
+    "path": "Test/checkout-autofill.ts",
+  },
+  Object {
+    "id": "1467f9e0-52ef-11e8-9986-dd586b391786",
+    "path": "Test/foo/bar.js",
+  },
+  Object {
+    "id": "1452c430-52ef-11e8-9986-dd586b391786",
+    "path": "Test/log-query.js",
+  },
+  Object {
+    "id": "144f41c0-52ef-11e8-9986-dd586b391786",
+    "path": "Test/log-store.js",
+  },
+  Object {
+    "id": "1495c0a0-52ef-11e8-9986-dd586b391786",
+    "path": "Test/nested/very-nested/very-very-nested/nested.js",
+  },
+  Object {
+    "id": "14980a90-52ef-11e8-9986-dd586b391786",
+    "path": "Test/nested/very-nested/very-very-nested/nested.md",
+  },
+  Object {
+    "id": "147e4100-52ef-11e8-9986-dd586b391786",
+    "path": "Test/nojs/an-image.png",
+  },
+  Object {
+    "id": "147fa090-52ef-11e8-9986-dd586b391786",
+    "path": "Test/nojs/some-markdown.md",
+  },
+  Object {
+    "id": "14667340-52ef-11e8-9986-dd586b391786",
+    "path": "Test/search-autofill.js",
+  },
+  Object {
+    "id": "146784b0-52ef-11e8-9986-dd586b391786",
+    "path": "Test/source-autofill.js",
+  },
+  Object {
+    "id": "26a0bd90-52ef-11e8-9986-dd586b391786",
+    "path": "Test (file)/register-autofill.js",
+  },
+]
+`;
