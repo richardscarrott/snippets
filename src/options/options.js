@@ -40,7 +40,6 @@ chrome.runtime.getBackgroundPage(({ getStore }) => {
     throw new Error('Expected global `getStore` defined by background page.');
   }
   const [store, persistor] = getStore();
-
   render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
