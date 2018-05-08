@@ -25,7 +25,6 @@ const init = store => {
   chrome.omnibox.onInputEntered.addListener(fileId => {
     const files = filesEntitiesSelector(store.getState());
     const file = files[fileId];
-    // TODO: Move to util as it's non obvious. (weird that .getCurrentTab doesn't work in background...)
     chrome.tabs.query({ currentWindow: true, active: true }, tabs =>
       execSnippet(tabs[0], file.content)
     );

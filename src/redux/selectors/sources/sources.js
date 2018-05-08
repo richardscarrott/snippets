@@ -2,11 +2,11 @@ import { createSelector } from 'reselect';
 import { denormalize } from 'normalizr';
 import { sourceListSchema } from '../../../api/fetch-source/fetch-source';
 
-export const entitiesSelector = state => state.entities;
+const entitiesSelector = state => state.entities;
 
-export const sourcesMetaSelector = state => state.sources.meta;
+const sourcesMetaSelector = state => state.sources.meta;
 
-export const sourcesDataSelector = state => state.sources.data;
+const sourcesDataSelector = state => state.sources.data;
 
 export const sourcesSelector = createSelector(
   sourcesDataSelector,

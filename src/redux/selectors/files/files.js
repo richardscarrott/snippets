@@ -5,7 +5,7 @@ export const filesEntitiesSelector = state => state.entities.files;
 
 const isFile = content => typeof content.content === 'string';
 
-const getFilesPaths = (content, path) => {
+const getFilePaths = (content, path) => {
   if (isFile(content)) {
     return [
       {
@@ -17,7 +17,7 @@ const getFilesPaths = (content, path) => {
   return content.content.reduce(
     (files, childContent) =>
       files.concat(
-        getFilesPaths(
+        getFilePaths(
           childContent,
           path ? `${path}/${content.name}` : content.name
         )
@@ -27,5 +27,5 @@ const getFilesPaths = (content, path) => {
 };
 
 export const filePathsSelector = createSelector(sourcesSelector, sources =>
-  getFilesPaths({ content: sources })
+  getFilePaths({ content: sources })
 );
