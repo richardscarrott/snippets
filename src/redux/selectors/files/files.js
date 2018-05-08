@@ -3,16 +3,22 @@ import { sourcesSelector } from '../sources/sources';
 
 export const filesEntitiesSelector = state => state.entities.files;
 
-const isFile = content => typeof content.content === 'string';
+const isDir = content => Array.isArray(content.content);
+
+const isFile = content => !isDir(content);
+
+const isFileRenderable = file => file.name.endsWith('.js');
 
 const getFilePaths = (content, path) => {
   if (isFile(content)) {
-    return [
-      {
-        id: content.id,
-        path: `${path}/${content.name}`
-      }
-    ];
+    return isFileRenderable(content)
+      ? [
+          {
+            id: content.id,
+            path: `${path}/${content.name}`
+          }
+        ]
+      : [];
   }
   return content.content.reduce(
     (files, childContent) =>

@@ -7,14 +7,6 @@ Array [
     "path": "Test/account/register-autofill.js",
   },
   Object {
-    "id": "14477990-52ef-11e8-9986-dd586b391786",
-    "path": "Test/barrel-roll.png",
-  },
-  Object {
-    "id": "144e5760-52ef-11e8-9986-dd586b391786",
-    "path": "Test/checkout-autofill.ts",
-  },
-  Object {
     "id": "1467f9e0-52ef-11e8-9986-dd586b391786",
     "path": "Test/foo/bar.js",
   },
@@ -29,18 +21,6 @@ Array [
   Object {
     "id": "1495c0a0-52ef-11e8-9986-dd586b391786",
     "path": "Test/nested/very-nested/very-very-nested/nested.js",
-  },
-  Object {
-    "id": "14980a90-52ef-11e8-9986-dd586b391786",
-    "path": "Test/nested/very-nested/very-very-nested/nested.md",
-  },
-  Object {
-    "id": "147e4100-52ef-11e8-9986-dd586b391786",
-    "path": "Test/nojs/an-image.png",
-  },
-  Object {
-    "id": "147fa090-52ef-11e8-9986-dd586b391786",
-    "path": "Test/nojs/some-markdown.md",
   },
   Object {
     "id": "14667340-52ef-11e8-9986-dd586b391786",
