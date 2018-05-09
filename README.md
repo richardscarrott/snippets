@@ -4,18 +4,22 @@ The Snippets chrome extension provides easy access to JavaScript snippets, allow
 
 Currently there are two views for your snippets:
 
-### 1) Context Menu
+## Context Menu
 The context menu provides easy access and discovery of snippets by right clicking anywhere in the page. Clicking on a snippet will execute it in the current tab.
 
-![Context Menu Example](docs/context-menu.gif)
+<p align="center">
+  <img src="docs/context-menu.gif" alt="Context Menu Example">
+</p>
 
-### 2) Omnibox
+## Omnibox
 The omnibox is the fastest way to find and execute a snippet allowing you to fuzzy search all available snippets. To activate the Snippets omnibox, focus on the address bar and type '`s`' then `tab` or `space`. Once activated you can begin to fuzzy search.
 
 > :bulb: You can use `⌘+l` to jump straight to the address bar.
 
-![Omnibox Example](docs/omnibox.gif)
+<p align="center">
+  <img src="docs/omnibox.gif" alt="Context Menu Example">
+</p>
 
-## Recommended Snippets
+## License
 
-TODO.
+MIT
