@@ -6,15 +6,15 @@
   "homepage_url": "http://github.com/richardscarrott/snippets",
   "omnibox": { "keyword": "s" },
   "icons": {
-    "256": "artwork/icon-256.png"
+    "16": "artwork/icon-128.png",
+    "48": "artwork/icon-128.png",
+    "128": "artwork/icon-128.png"
   },
   "background": {
     "scripts": ["dist/background.js"],
     "persistent": true
   },
-  "browser_action": {
-    "default_icon": "artwork/icon-256.png"
-  },
+  "browser_action": {},
   "options_page": "dist/options.html",
   "options_ui": {
     "page": "dist/options.html",
