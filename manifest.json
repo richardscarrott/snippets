@@ -2,7 +2,8 @@
   "name": "Snippets",
   "version": "0.2.5",
   "manifest_version": 2,
-  "description": "Add JavaScript snippets to your context menu",
+  "description":
+    "Pulls in JavaScript code snippets from any GitHub repository (including GitHub Enterprise), allowing them to be executed via the context menu or omnibox",
   "homepage_url": "http://github.com/richardscarrott/snippets",
   "omnibox": { "keyword": "s" },
   "icons": {
