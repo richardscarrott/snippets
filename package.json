@@ -12,7 +12,7 @@
     "build": "webpack --config ./build/webpack-config.js --env production",
     "clean": "rm -rf dist",
     "prepackage": "npm run build",
-    "package": "zip -r app.zip manifest.json icons dist"
+    "package": "zip -r app.zip manifest.json artwork dist"
   },
   "author": "",
   "license": "ISC",
