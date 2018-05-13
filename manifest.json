@@ -2,8 +2,7 @@
   "name": "Snippets",
   "version": "0.2.5",
   "manifest_version": 2,
-  "description":
-    "Pulls in JavaScript code snippets from any GitHub repository (including GitHub Enterprise), allowing them to be executed via the context menu or omnibox",
+  "description": "Import and execute JavaScript code snippets from GitHub",
   "homepage_url": "http://github.com/richardscarrott/snippets",
   "omnibox": { "keyword": "s" },
   "icons": {
