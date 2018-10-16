@@ -41,7 +41,7 @@ const init = store => {
           try {
             regExp = new RegExp(source.urlPattern);
           } catch (e) {}
-          if(regExp.test(tab.url)){
+          if(regExp && regExp.test(tab.url)){
             source.content.forEach(content => execContentSnippet(tab, content));  
           }
         }
