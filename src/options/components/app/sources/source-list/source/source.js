@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  List,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -57,6 +58,7 @@ class Source extends Component {
       owner,
       repo,
       path,
+      urlPattern,
       meta: { status },
       url
     } = this.props;
@@ -66,7 +68,10 @@ class Source extends Component {
         <ListItemIcon>
           {status === 'READING' ? <CircularProgress size={24} /> : <CodeIcon />}
         </ListItemIcon>
-        <ListItemText primary={name} secondary={url} />
+        <div>
+          <ListItemText primary={name} secondary={url} />
+          <div>{urlPattern}</div>
+        </div>
         <ListItemSecondaryAction onClick={this.handleMenuOpen}>
           <IconButton>
             <MoreVertIcon />

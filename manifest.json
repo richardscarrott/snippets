@@ -21,7 +21,7 @@
     "chrome_style": false,
     "open_in_tab": true
   },
-  "permissions": ["contextMenus", "storage", "unlimitedStorage"],
+  "permissions": ["contextMenus", "storage", "unlimitedStorage", "tabs"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

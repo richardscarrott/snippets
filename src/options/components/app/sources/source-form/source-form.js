@@ -39,14 +39,15 @@ class SourceForm extends Component {
       handleSubmit,
       onSubmit,
       status,
-      pendingStatus
+      pendingStatus,
+      urlPattern
     } = this.props;
     return (
       <form
         onSubmit={handleSubmit(data => {
           onSubmit(
             Object.entries(data).reduce((normalizedData, [key, value]) => {
-              normalizedData[key] = value.trim();
+              normalizedData[key] = Array.isArray(value) ? value : value.trim();
               return normalizedData;
             }, {})
           );
@@ -115,6 +116,16 @@ class SourceForm extends Component {
             helperText={<GithubAccessTokenHelperText />}
             fullWidth
           />
+          <ReduxFormTextField
+            {...urlPattern.input}
+            meta={urlPattern.meta}
+            margin="dense"
+            id="urlPattern"
+            label="URL Regex Pattern"
+            placeholder="[A-z]*.google.com"
+            helperText="Optionally run this snippet on tab load if URL mathces the pattern."
+            fullWidth
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose} color="primary">
@@ -157,7 +168,7 @@ export default reduxForm({
   return (
     <Fields
       {...props}
-      names={['name', 'url', 'accessToken']}
+      names={['name', 'url', 'accessToken', 'urlPattern']}
       component={SourceForm}
     />
   );
