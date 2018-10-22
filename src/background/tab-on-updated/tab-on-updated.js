@@ -21,7 +21,7 @@ const execContentSnippet = (tab, content) => {
     if(!isFileExecutable(content)){
       return;
     }
-    execSnippet(tab, content.content);
+    execSnippet(tab, content.content, content.id);
     return;
   }
   if (isDir(content)) {
@@ -33,20 +33,18 @@ const execContentSnippet = (tab, content) => {
 };
 
 const init = store => {
-  chrome.tabs.onUpdated.addListener((tabId, info, tab) => {
-    if(info.status === 'complete'){
-      sourcesSelector(store.getState()).forEach(source => {
-        let regExp;
-        if(source.urlPattern){
-          try {
-            regExp = new RegExp(source.urlPattern);
-          } catch (e) {}
-          if(regExp && regExp.test(tab.url)){
-            source.content.forEach(content => execContentSnippet(tab, content));  
-          }
+  chrome.webNavigation.onCommitted.addListener((details)=>{
+    sourcesSelector(store.getState()).forEach(source => {
+      let regExp;
+      if(source.urlPattern){
+        try {
+          regExp = new RegExp(source.urlPattern);
+        } catch (e) {}
+        if(regExp && regExp.test(details.url)){
+          source.content.forEach(content => execContentSnippet(details.tabId, content));  
         }
-      });
-    }
+      }
+    });
   });
 };
 

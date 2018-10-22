@@ -21,11 +21,22 @@
     "chrome_style": false,
     "open_in_tab": true
   },
-  "permissions": ["contextMenus", "storage", "unlimitedStorage", "tabs"],
+  "permissions": [
+    "contextMenus", 
+    "storage", 
+    "unlimitedStorage", 
+    "tabs", 
+    "webNavigation",
+    "http://*/",
+    "https://*/",
+    "activeTab"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["dist/content.js"]
+      "js": ["dist/content.js"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ]
 }
